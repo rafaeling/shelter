@@ -162,6 +162,10 @@
 		
 					include 'content/adopciones/modificar_adopcion.php';
 			
+				}else if ($t == "modificar_adopcion") {
+		
+					include 'content/adopciones/modificar_adopcion.php';
+			
 				}
 
 
