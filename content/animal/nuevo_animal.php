@@ -1,4 +1,4 @@
-<form action="<?php $_SERVER['PHP_SELF'] ?>" method="POST">
+<form action="<?php $_SERVER['PHP_SELF'] ?>" method="post" enctype="multipart/form-data">
 <table>
 						
 	<tbody>
@@ -18,8 +18,16 @@
 			</tr>
 
 			<tr>
+
 				<td><label for="foto_animal">Foto:</label></td>
-				<td><input id="foto_animal" name="foto_animal" size="30" maxlength="40" type="text"></td>							
+				<td><input type="file" name="fileToUpload" id="fileToUpload"></td>			
+
+
+			
+				
+
+
+
 			</tr>
 			
 			<tr>
@@ -39,7 +47,7 @@
 
 			<tr>
 				<td><label for="edad_animal">Edad:</label></td>
-				<td><input id="edad_animal" name="edad_animal" size="30" maxlength="40" type="text"></td>							
+				<td><input type="date" id="edad_animal" name="edad_animal" value="<?php echo date("Y-m-d"); ?>"></td>							
 			</tr>
 
 			<tr>
@@ -64,13 +72,26 @@
 
 			<tr>
 				<td><label for="estado_animal">Estado:</label></td>
-				<td><input id="estado_animal" name="estado_animal" size="30" maxlength="40" type="text"></td>							
+				<td><select id="estado_animal" name="estado_animal">
+						<option value="vacio">Seleccionar</option>
+						<option value="refugio">Refugio</option>
+						<option value="acogido">Acogido</option>
+						<option value="adoptado">Adoptado</option>
+						<option value="difunto">Difunto</option>
+					</select>
+
+				</td>							
 			</tr>
 
 
 			<tr>
 				<td><label for="reservado_animal">Reservado:</label></td>
-				<td><input id="reservado_animal" name="reservado_animal" size="30" maxlength="40" type="text"></td>							
+				<td><select id="reservado_animal" name="reservado_animal">
+						<option value="vacio">Seleccionar</option>
+						<option value="1">Si</option>
+						<option value="0">No</option>
+					</select>
+				</td>							
 			</tr>
 
 			<tr>
@@ -86,7 +107,7 @@
 
 			<tr>
 				<td><label for="fecha_llegada_animal">Fecha llegada:</label></td>
-				<td><input id="fecha_llegada_animal" name="fecha_llegada_animal" size="30" maxlength="40" type="text"></td>							
+				<td><input type="date" id="fecha_llegada_animal" name="fecha_llegada_animal" value="<?php echo date("Y-m-d"); ?>"></td>						
 			</tr>
 
 
@@ -108,8 +129,8 @@
 					
 	</tbody>
 	</table>
-</form>	
 
+</formm>
 	<?php
 	/*
 		include('content/base_datos/conexion_bd.php');
@@ -130,21 +151,29 @@
 			
 			include('content/base_datos/conexion_bd.php');
 
-		
+			$target_dir = "content/animal/uploads/";
 
-			$sql = "INSERT INTO `animal` (`chip_animal`, `nombre_animal`, `foto_animal`, `especie_animal`, `raza_animal`, `sexo_animal`, `fecha_nacimiento_animal`, `color_animal`, `peso_animal`, `tamanio_animal`, `salud_animal`, `estado_animal`, `reservado_animal`, `medicamentos_animal`, `notas_animal`, `fecha_llegada_animal`, `direccion_animal`, `multimedia_animal`) VALUES ('".$_POST['num_chip_animal']."','".$_POST['name_animal']."','".$_POST['foto_animal']."','".$_POST['especie_animal']."','".$_POST['raza_animal']."','".$_POST['sexo_animal']."','".$_POST['edad_animal']."','".$_POST['color_animal']."', ".$_POST['peso_animal'].", '".$_POST['tamanio_animal']."', '".$_POST['salud_animal']."', '".$_POST['estado_animal']."', ".$_POST['reservado_animal'].", '".$_POST['medicamentos_animal']."', '".$_POST['notas_animal']."', '".$_POST['fecha_llegada_animal']."', '".$_POST['direccion_animal']."', '".$_POST['multimedia_animal']."');";
-			echo $sql;
+			$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+			
+			$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
 
+			move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file);
+
+			$sql = "INSERT INTO `animal` (`chip_animal`, `nombre_animal`, `foto_animal`, `especie_animal`, `raza_animal`, `sexo_animal`, `fecha_nacimiento_animal`, `color_animal`, `peso_animal`, `tamanio_animal`, `salud_animal`, `estado_animal`, `reservado_animal`, `medicamentos_animal`, `notas_animal`, `fecha_llegada_animal`, `direccion_animal`, `multimedia_animal`) VALUES ('".$_POST['num_chip_animal']."','".$_POST['name_animal']."','".$target_file."','".$_POST['especie_animal']."','".$_POST['raza_animal']."','".$_POST['sexo_animal']."','".$_POST['edad_animal']."','".$_POST['color_animal']."', ".$_POST['peso_animal'].", '".$_POST['tamanio_animal']."', '".$_POST['salud_animal']."', '".$_POST['estado_animal']."', ".$_POST['reservado_animal'].", '".$_POST['medicamentos_animal']."', '".$_POST['notas_animal']."', '".$_POST['fecha_llegada_animal']."', '".$_POST['direccion_animal']."', '".$_POST['multimedia_animal']."');";
+			
 			$res = mysqli_query($conexion_bd, $sql);
 
-			echo "OK";
-
-			echo $res;
+			if($res == 1)
+			{
+				echo "Insercion Correcta";
+			}else
+			{
+				echo "Insercion falillda";
+			}
 
 			//echo 'CHIP: '.$_POST['num_chip_animal'].' NOMBRE ANIMAL: '.$_POST['name_animal'].' FOTO ANIMAL: '.$_POST['foto_animal'].' ESPECIE ANIMAL: '.$_POST['especie_animal'].' RAZA ANIMAL: '.$_POST['raza_animal'].' SEXO ANIMAL: '.$_POST['sexo_animal'].' FECHA NACIMIENTO: '.$_POST['edad_animal'].' COLOR ANIMAL: '.$_POST['color_animal'].' PESO ANIMAL: '.$_POST['peso_animal'].' TAMAÑO ANIMAL: '.$_POST['tamaño_animal'].' SALUD ANIMAL: '.$_POST['salud_animal'].' ESTADO ANIMAL: '.$_POST['estado_animal'].' RESERVADO ANIMAL: '.$_POST['reservado_animal'].' MEDICAMENTOS ANIMAL: '.$_POST['medicamentos_animal'].' NOTAS ANIMAL: '.$_POST['notas_animal'].' FECHA LLEGADA ANIMAL: '.$_POST['fecha_llegada_animal'].' DIRECCION ANIMAL: '.$_POST['direccion_animal'].' MULTIMEDIA ANIMAL: '.$_POST['multimedia_animal'].' ';
 		
 		}
 
 	?>
-
 
