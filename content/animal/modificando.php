@@ -1,9 +1,114 @@
-<form action="<?php $_SERVER['PHP_SELF'] ?>" method="post" enctype="multipart/form-data">
+<form action="<?php  $_SERVER['PHP_SELF']; ?>" method="post" enctype="multipart/form-data">
 <table>
 
 	<?php
 						
 	$animal = isset($_GET["animal"]) ? $_GET["animal"] : '';
+
+
+		if (isset($_POST['modificar']))
+		{
+			
+			include('content/base_datos/conexion_bd.php');
+
+			if(strlen(basename($_FILES["fileToUpload"]["name"])) > 2)
+			{
+
+				$target_dir = "content/animal/uploads/";
+
+				$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+
+				$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
+
+				move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file);
+
+				$sql = "UPDATE `animal` SET foto_animal='".$target_file."' WHERE chip_animal='".$_POST['num_chip_animal']."'";
+
+				$res = mysqli_query($conexion_bd, $sql);
+
+			}
+
+			$sql = "UPDATE `animal` SET nombre_animal='".$_POST['name_animal']."' WHERE chip_animal='".$_POST['num_chip_animal']."'";
+
+			$res = mysqli_query($conexion_bd, $sql);
+
+			$sql = "UPDATE `animal` SET chip_animal='".$_POST['num_chip_animal']."' WHERE chip_animal='".$animal."'";
+
+			$res = mysqli_query($conexion_bd, $sql);
+
+			$sql = "UPDATE `animal` SET especie_animal='".$_POST['especie_animal']."' WHERE chip_animal='".$_POST['num_chip_animal']."'";
+
+			$res = mysqli_query($conexion_bd, $sql);
+
+			$sql = "UPDATE `animal` SET raza_animal='".$_POST['raza_animal']."' WHERE chip_animal='".$_POST['num_chip_animal']."'";
+
+			$res = mysqli_query($conexion_bd, $sql);
+
+			$sql = "UPDATE `animal` SET sexo_animal='".$_POST['sexo_animal']."' WHERE chip_animal='".$_POST['num_chip_animal']."'";
+
+			$res = mysqli_query($conexion_bd, $sql);
+
+			$sql = "UPDATE `animal` SET fecha_nacimiento_animal='".$_POST['edad_animal']."' WHERE chip_animal='".$_POST['num_chip_animal']."'";
+
+			$res = mysqli_query($conexion_bd, $sql);
+
+			$sql = "UPDATE `animal` SET color_animal='".$_POST['color_animal']."' WHERE chip_animal='".$_POST['num_chip_animal']."'";
+
+			$res = mysqli_query($conexion_bd, $sql);
+
+			$sql = "UPDATE `animal` SET peso_animal='".$_POST['peso_animal']."' WHERE chip_animal='".$_POST['num_chip_animal']."'";
+
+			$res = mysqli_query($conexion_bd, $sql);
+
+			$sql = "UPDATE `animal` SET tamanio_animal='".$_POST['tamanio_animal']."' WHERE chip_animal='".$_POST['num_chip_animal']."'";
+
+			$res = mysqli_query($conexion_bd, $sql);
+
+			$sql = "UPDATE `animal` SET salud_animal='".$_POST['salud_animal']."' WHERE chip_animal='".$_POST['num_chip_animal']."'";
+
+			$res = mysqli_query($conexion_bd, $sql);
+
+			if($_POST['estado_animal'] != "vacio")
+			{
+				$sql = "UPDATE `animal` SET estado_animal='".$_POST['estado_animal']."' WHERE chip_animal='".$_POST['num_chip_animal']."'";
+
+				$res = mysqli_query($conexion_bd, $sql);
+			}
+
+			$sql = "UPDATE `animal` SET reservado_animal='".$_POST['reservado_animal']."' WHERE chip_animal='".$_POST['num_chip_animal']."'";
+
+			$res = mysqli_query($conexion_bd, $sql);
+
+			$sql = "UPDATE `animal` SET medicamentos_animal='".$_POST['medicamentos_animal']."' WHERE chip_animal='".$_POST['num_chip_animal']."'";
+
+			$res = mysqli_query($conexion_bd, $sql);
+
+			$sql = "UPDATE `animal` SET notas_animal='".$_POST['notas_animal']."' WHERE chip_animal='".$_POST['num_chip_animal']."'";
+
+			$res = mysqli_query($conexion_bd, $sql);
+
+			$sql = "UPDATE `animal` SET fecha_llegada_animal='".$_POST['fecha_llegada_animal']."' WHERE chip_animal='".$_POST['num_chip_animal']."'";
+
+			$res = mysqli_query($conexion_bd, $sql);
+
+			$sql = "UPDATE `animal` SET direccion_animal='".$_POST['direccion_animal']."' WHERE chip_animal='".$_POST['num_chip_animal']."'";
+
+			$res = mysqli_query($conexion_bd, $sql);
+
+			$sql = "UPDATE `animal` SET multimedia_animal='".$_POST['multimedia_animal']."' WHERE chip_animal='".$_POST['num_chip_animal']."'";
+
+			$res = mysqli_query($conexion_bd, $sql);
+
+			if($res == 1)
+			{
+				echo "Modificación Correcta";
+			}else
+			{
+				echo "Modificación falillda";
+			}
+
+		
+		}
 
 	?>
 
@@ -25,7 +130,6 @@
 			$res = mysqli_query($conexion_bd, $sql);
 
 			$row = mysqli_fetch_assoc($res);
-
 
 			mysqli_close($conexion_bd);
 					
@@ -169,125 +273,4 @@
 </formm>
 
 
-
-	<?php
-	/*
-		include('content/base_datos/conexion_bd.php');
-
-		$sql = "SELECT nombre_animal FROM animal WHERE chip_animal='26820455V'";
-		
-		$res = mysqli_query($conexion_bd, $sql);
-
-		$row = mysqli_fetch_assoc($res);
-
-		mysqli_close($conexion_bd);
-				
-		echo '<div> <h1>Bienvenido, '.$row['nombre_animal'].'</h1></div>';
-	*/
-
-		if (isset($_POST['modificar']))
-		{
-			
-			include('content/base_datos/conexion_bd.php');
-
-			if(strlen(basename($_FILES["fileToUpload"]["name"])) > 2)
-			{
-
-				$target_dir = "content/animal/uploads/";
-
-				$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
-
-				$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
-
-				move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file);
-
-				$sql = "UPDATE `animal` SET foto_animal='".$target_file."' WHERE chip_animal='".$_POST['num_chip_animal']."'";
-
-				$res = mysqli_query($conexion_bd, $sql);
-
-			}
-
-			$sql = "UPDATE `animal` SET nombre_animal='".$_POST['name_animal']."' WHERE chip_animal='".$_POST['num_chip_animal']."'";
-
-			$res = mysqli_query($conexion_bd, $sql);
-
-			$sql = "UPDATE `animal` SET chip_animal='".$_POST['num_chip_animal']."' WHERE chip_animal='".$animal."'";
-
-			$res = mysqli_query($conexion_bd, $sql);
-
-			$sql = "UPDATE `animal` SET especie_animal='".$_POST['especie_animal']."' WHERE chip_animal='".$_POST['num_chip_animal']."'";
-
-			$res = mysqli_query($conexion_bd, $sql);
-
-			$sql = "UPDATE `animal` SET raza_animal='".$_POST['raza_animal']."' WHERE chip_animal='".$_POST['num_chip_animal']."'";
-
-			$res = mysqli_query($conexion_bd, $sql);
-
-			$sql = "UPDATE `animal` SET sexo_animal='".$_POST['sexo_animal']."' WHERE chip_animal='".$_POST['num_chip_animal']."'";
-
-			$res = mysqli_query($conexion_bd, $sql);
-
-			$sql = "UPDATE `animal` SET fecha_nacimiento_animal='".$_POST['edad_animal']."' WHERE chip_animal='".$_POST['num_chip_animal']."'";
-
-			$res = mysqli_query($conexion_bd, $sql);
-
-			$sql = "UPDATE `animal` SET color_animal='".$_POST['color_animal']."' WHERE chip_animal='".$_POST['num_chip_animal']."'";
-
-			$res = mysqli_query($conexion_bd, $sql);
-
-			$sql = "UPDATE `animal` SET peso_animal='".$_POST['peso_animal']."' WHERE chip_animal='".$_POST['num_chip_animal']."'";
-
-			$res = mysqli_query($conexion_bd, $sql);
-
-			$sql = "UPDATE `animal` SET tamanio_animal='".$_POST['tamanio_animal']."' WHERE chip_animal='".$_POST['num_chip_animal']."'";
-
-			$res = mysqli_query($conexion_bd, $sql);
-
-			$sql = "UPDATE `animal` SET salud_animal='".$_POST['salud_animal']."' WHERE chip_animal='".$_POST['num_chip_animal']."'";
-
-			$res = mysqli_query($conexion_bd, $sql);
-
-			if($_POST['estado_animal'] != "vacio")
-			{
-				$sql = "UPDATE `animal` SET estado_animal='".$_POST['estado_animal']."' WHERE chip_animal='".$_POST['num_chip_animal']."'";
-
-				$res = mysqli_query($conexion_bd, $sql);
-			}
-
-			$sql = "UPDATE `animal` SET reservado_animal='".$_POST['reservado_animal']."' WHERE chip_animal='".$_POST['num_chip_animal']."'";
-
-			$res = mysqli_query($conexion_bd, $sql);
-
-			$sql = "UPDATE `animal` SET medicamentos_animal='".$_POST['medicamentos_animal']."' WHERE chip_animal='".$_POST['num_chip_animal']."'";
-
-			$res = mysqli_query($conexion_bd, $sql);
-
-			$sql = "UPDATE `animal` SET notas_animal='".$_POST['notas_animal']."' WHERE chip_animal='".$_POST['num_chip_animal']."'";
-
-			$res = mysqli_query($conexion_bd, $sql);
-
-			$sql = "UPDATE `animal` SET fecha_llegada_animal='".$_POST['fecha_llegada_animal']."' WHERE chip_animal='".$_POST['num_chip_animal']."'";
-
-			$res = mysqli_query($conexion_bd, $sql);
-
-			$sql = "UPDATE `animal` SET direccion_animal='".$_POST['direccion_animal']."' WHERE chip_animal='".$_POST['num_chip_animal']."'";
-
-			$res = mysqli_query($conexion_bd, $sql);
-
-			$sql = "UPDATE `animal` SET multimedia_animal='".$_POST['multimedia_animal']."' WHERE chip_animal='".$_POST['num_chip_animal']."'";
-
-			$res = mysqli_query($conexion_bd, $sql);
-
-			if($res == 1)
-			{
-				echo "Insercion Correcta";
-			}else
-			{
-				echo "Insercion falillda";
-			}
-
-		
-		}
-
-	?>
 
