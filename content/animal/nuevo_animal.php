@@ -131,6 +131,9 @@
 	</table>
 
 </formm>
+
+
+
 	<?php
 	/*
 		include('content/base_datos/conexion_bd.php');
@@ -154,7 +157,7 @@
 			$target_dir = "content/animal/uploads/";
 
 			$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
-			
+
 			$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
 
 			move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file);
