@@ -166,6 +166,10 @@
 		
 					include 'content/adopciones/modificar_adopcion.php';
 			
+				}else if ($t == "modificando") {
+		
+					include 'content/animal/modificando.php';
+			
 				}
 
 

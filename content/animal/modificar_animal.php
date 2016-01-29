@@ -31,7 +31,12 @@
 								<label id="chip_animal">'.$row["chip_animal"].'<br></label>
 							</div>
 						</td>
-						
+
+						<td>
+							<div id="animal">
+								<br><a href="index.php?t=modificando&animal='.$row["chip_animal"].'">Modificar </a>'.$row["nombre_animal"].'</br>
+							</div>
+						</td>
 					</tr>';
 			}
 
