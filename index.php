@@ -252,8 +252,36 @@
 				}else if ($t == "nuevo_socio") {
 		
 					include 'content/socio/nuevo_socio.php';
+                                 
 			
 				}
+                                
+                                else if ($t == "dar_baja_veterinario") {
+		
+					include 'content/veterinario/dar_baja_veterinario.php';
+			
+				}else if ($t == "modificar_veterinario") {
+		
+					include 'content/veterinario/modificar_veterinario.php';
+			
+				}else if ($t == "nuevo_veterinario") {
+		
+					include 'content/veterinario/nuevo_veterinario.php';
+                                }
+                                
+                                else if ($t == "dar_baja_voluntario") {
+		
+					include 'content/voluntario/dar_baja_voluntario.php';
+			
+				}else if ($t == "modificar_voluntario") {
+		
+					include 'content/voluntario/modificar_voluntario.php';
+			
+				}else if ($t == "nuevo_voluntario") {
+		
+					include 'content/voluntario/nuevo_voluntario.php';
+                                }
+                                
                                 
                                 
                                 
