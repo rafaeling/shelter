@@ -65,6 +65,12 @@
 								<br><a href="index.php?t=casa_de_acogida_change&user='.$row["DNI"].'">Modificar </a>'.$row["nombre"].'</br>
 							</div>
 						</td>
+                                                
+                                                <td>
+							<div id="animal">
+								<br><a href="index.php?t=modificar_casa_de_acogida&eliminar=true&user='.$row["DNI"].'"> Eliminar </a>'.$row["nombre"].'</br>
+							</div>
+						</td>
 					</tr>';
 			}
 

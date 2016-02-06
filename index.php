@@ -83,7 +83,7 @@
 			
 				}else if ($t == "animales") {
 		
-					include 'content/gestionar_animales.php';
+					include 'content/animal/modificar_animal.php';
 			
 				}else if ($t == "eventos") {
 		
@@ -227,7 +227,7 @@
 			
 				}else if ($t == "casa_acogida") {
 		
-					include 'content/casas_de_acogida/modificar_casa_de_acogida.php';
+					include 'content/casa_de_acogida/modificar_casa_de_acogida.php';
 			
 				}else if ($t == "nuevo_adoptante") {
 		

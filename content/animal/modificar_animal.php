@@ -1,18 +1,48 @@
 <table>
 						
 	<tbody>
-		<tr>
-			<td><h2>Animales</h2></td>
-		</tr>
+		
 
 		<?php
-
-			include('content/base_datos/conexion_bd.php');
-
+                
+                        
+                        
+                        $eliminar = isset($_GET["eliminar"]) ? $_GET["eliminar"] : '';
+		
+                        
+                        include('content/base_datos/conexion_bd.php');
+                        
+                        if($eliminar == 'true')
+                        {
+                            $user = isset($_GET["user"]) ? $_GET["user"] : '';
+                            
+                            $sql = "DELETE FROM animal WHERE DNI='".$user."'";
+                            
+                            $res = mysqli_query($conexion_bd, $sql);
+                        }
+                        
+                        
+                        
+                        
+                     
+                        
+                        
 			$sql = "SELECT * FROM animal";
 			
 			$res = mysqli_query($conexion_bd, $sql);
-
+                        
+                        
+                        echo '<tr>
+                            <td>
+							<div id="animal">
+								<br><a href="index.php?t=nuevo_animal"> Nuevo animal </a></br>
+							</div>
+						</td>
+			</tr>
+                        <tr>
+			<td><h2>Animales:</h2></td>
+		</tr>';
+                        
 			while($row = mysqli_fetch_assoc($res))
 			{
 				echo '<tr>
@@ -35,6 +65,12 @@
 						<td>
 							<div id="animal">
 								<br><a href="index.php?t=modificando&animal='.$row["chip_animal"].'">Modificar </a>'.$row["nombre_animal"].'</br>
+							</div>
+						</td>
+                                                
+<td>
+							<div id="animal">
+								<br><a href="index.php?t=modificar_animal&eliminar=true&user='.$row["DNI"].'"> Eliminar </a>'.$row["nombre"].'</br>
 							</div>
 						</td>
 					</tr>';
