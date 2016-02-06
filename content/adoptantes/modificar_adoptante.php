@@ -13,6 +13,14 @@
 			
 			$res = mysqli_query($conexion_bd, $sql);
 
+                        echo '<tr>
+                            <td>
+							<div id="animal">
+								<br><a href="index.php?t=nuevo_adoptante'.$row["DNI"].'"> Nuevo adoptante </a>'.$row["nombre"].'</br>
+							</div>
+						</td>
+			</tr>';
+                        
 			while($row = mysqli_fetch_assoc($res))
 			{
 				echo '<tr>
@@ -33,6 +41,12 @@
 						<td>
 							<div id="animal">
 								<br><a href="index.php?t=userchange&user='.$row["DNI"].'">Modificar </a>'.$row["nombre"].'</br>
+							</div>
+						</td>
+                                                
+                                                <td>
+							<div id="animal">
+								<br><a href="index.php?t=userchange&user='.$row["DNI"].'"> Eliminar </a>'.$row["nombre"].'</br>
 							</div>
 						</td>
 					</tr>';
