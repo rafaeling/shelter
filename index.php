@@ -181,7 +181,33 @@
 		
 					include 'content/usuario/userchange.php';
 			
+				}else if ($t == "voluntario") {
+		
+					include 'content/voluntario.php';
+			
+				}else if ($t == "socio") {
+		
+					include 'content/socio.php';
+			
+				}else if ($t == "veterinario") {
+		
+					include 'content/veterinario.php';
+			
+				}else if ($t == "padrino") {
+		
+					include 'content/padrinos.php';
+			
+				}else if ($t == "adoptante") {
+		
+					include 'content/adoptantes.php';
+			
+				}else if ($t == "casa_acogida") {
+		
+					include 'content/casas_de_acogida.php';
+			
 				}
+                                
+                                
 
 
 				
