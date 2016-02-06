@@ -4,17 +4,38 @@
 		
 
 		<?php
-
-			include('content/base_datos/conexion_bd.php');
-
+                
+                        
+                        
+                        $eliminar = isset($_GET["eliminar"]) ? $_GET["eliminar"] : '';
+		
+                        
+                        include('content/base_datos/conexion_bd.php');
+                        
+                        if($eliminar == 'true')
+                        {
+                            $user = isset($_GET["user"]) ? $_GET["user"] : '';
+                            
+                            $sql = "DELETE FROM adoptante WHERE DNI='".$user."'";
+                            
+                            $res = mysqli_query($conexion_bd, $sql);
+                        }
+                        
+                        
+                        
+                        
+                     
+                        
+                        
 			$sql = "SELECT * FROM adoptante";
 			
 			$res = mysqli_query($conexion_bd, $sql);
-
+                        
+                        
                         echo '<tr>
                             <td>
 							<div id="animal">
-								<br><a href="index.php?t=nuevo_adoptante'.$row["DNI"].'"> Nuevo adoptante </a>'.$row["nombre"].'</br>
+								<br><a href="index.php?t=nuevo_adoptante"> Nuevo adoptante </a></br>
 							</div>
 						</td>
 			</tr>
@@ -47,7 +68,7 @@
                                                 
                                                 <td>
 							<div id="animal">
-								<br><a href="index.php?t=userchange&user='.$row["DNI"].'"> Eliminar </a>'.$row["nombre"].'</br>
+								<br><a href="index.php?t=modificar_adoptante&eliminar=true&user='.$row["DNI"].'"> Eliminar </a>'.$row["nombre"].'</br>
 							</div>
 						</td>
 					</tr>';
