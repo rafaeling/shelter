@@ -304,6 +304,9 @@
 				}else if ($t == "nuevo_voluntario") {
 		
 					include 'content/voluntario/nuevo_voluntario.php';
+                                }else if ($t == "adoptante_change") {
+		
+					include 'content/adoptantes/userchange.php';
                                 }
                                 
                                 
