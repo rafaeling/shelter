@@ -109,44 +109,43 @@
 
 			include('content/base_datos/conexion_bd.php');
 
-			$sql = "SELECT * FROM usuario WHERE dni_user='".$user."'";
+			$sql = "SELECT * FROM adoptante WHERE DNI='".$user."'";
 			
 			$res = mysqli_query($conexion_bd, $sql);
 
 			$row = mysqli_fetch_assoc($res);
 
 			mysqli_close($conexion_bd);
+                        
+                        echo $row['nombre'];
 					
 	
 		?>
 			<tr>
 				<td><label for="nombre_user">Nombre:</label></td>
-				<?php echo '<td><input id="nombre_user" name="nombre_user" size="30" maxlength="40" type="text" value="'.$row['nombre_user'].'"></td>'; ?>						
+				<?php echo '<td><input id="nombre_user" name="nombre_user" size="30" maxlength="40" type="text" value="'.$row['nombre'].'"></td>'; ?>						
 			</tr>
 
-			<tr>
-				<td><label for="apellido_user">Apellidos:</label></td>
-				<?php echo '<td><input id="apellido_user" name="apellido_user" size="30" maxlength="40" type="text" value="'.$row['apellido_user'].'"></td>'; ?>							
-			</tr>
+			
 
 			<tr>
 				<td><label for="email_user">Correo electronico:</label></td>
-				<?php echo '<td><input id="email_user" name="email_user" size="30" maxlength="40" type="email" value="'.$row['email_user'].'"></td>'; ?>							
+				<?php echo '<td><input id="email_user" name="email_user" size="30" maxlength="40" type="email" value="'.$row['correo'].'"></td>'; ?>							
 			</tr>
 
 			<tr>
 				<td><label for="dni_user">DNI:</label></td>
-				<?php echo '<td><input id="dni_user" name="dni_user" size="30" maxlength="40" type="text" value="'.$row['dni_user'].'"></td>'; ?>						
+				<?php echo '<td><input id="dni_user" name="dni_user" size="30" maxlength="40" type="text" value="'.$row['DNI'].'"></td>'; ?>						
 			</tr>
 			
 			<tr>
 				<td><label for="telefono_user">Teléfono:</label></td>
-				<?php echo '<td><input id="telefono_user" name="telefono_user" size="30" maxlength="40" type="text" value="'.$row['telefono_user'].'"></td>'; ?>							
+				<?php echo '<td><input id="telefono_user" name="telefono_user" size="30" maxlength="40" type="text" value="'.$row['telefono'].'"></td>'; ?>							
 			</tr>
 
 			<tr>
 				<td><label for="dirrecion_user">Dirección:</label></td>
-				<?php echo '<td><input id="direccion_user" name="direccion_user" size="30" maxlength="40" type="text" value="'.$row['direccion_user'].'"></td>'; ?>						
+				<?php echo '<td><input id="direccion_user" name="direccion_user" size="30" maxlength="40" type="text" value="'.$row['direccion'].'"></td>'; ?>						
 			</tr>
 		
 
