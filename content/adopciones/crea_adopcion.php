@@ -32,8 +32,8 @@
 		</tr>
                 
                 <tr>
-			<td><label for="tasa">Tasas:</label></td>
-			<td><input id="tasa" name="tasa" size="30" maxlength="40" type="text"></td>							
+			<td><label for="tasas">Tasas:</label></td>
+			<td><input id="tasas" name="tasas" size="30" maxlength="40" type="text"></td>							
 		</tr>
                 
                 <tr>
@@ -43,7 +43,7 @@
                 
                 <tr>
 			<td><label for="contrato">Contrato:</label></td>
-			<td><input id="tasa_abonada" name="tasa_abonada" size="30" maxlength="40" type="text"></td>							
+			<td><input id="contrato" name="contrato" size="30" maxlength="40" type="text"></td>							
 		</tr>
                 
                 <tr>
