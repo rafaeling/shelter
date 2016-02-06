@@ -1,3 +1,4 @@
+<form id="formulario_usuario" action="<?php $_SERVER['PHP_SELF'] ?>" method="POST">
 <table>
 						
 	<tbody>
@@ -14,7 +15,7 @@
                         echo '<tr>
 
                                 <td>
-                                    <label for="name_animal">Nombre Animal: </label>
+                                    <label for="name_animal">Chip Animal: </label>
                                     <label id="nombre_animal">'.$animal.'<br></label>
                                 </td>
                                 <td>
@@ -26,8 +27,34 @@
                     ?>
 					
 		<tr>
-			<td><label for="name_animal">Nombre:</label></td>
-			<td><input id="name_animal" name="name_animal" size="30" maxlength="40" type="text"></td>							
+			<td><label for="fecha">Fecha:</label></td>
+			<td><input id="fecha" name="fecha" size="30" maxlength="40" type="text"></td>							
+		</tr>
+                
+                <tr>
+			<td><label for="tasa">Tasas:</label></td>
+			<td><input id="tasa" name="tasa" size="30" maxlength="40" type="text"></td>							
+		</tr>
+                
+                <tr>
+			<td><label for="tasa_abonada">Tasa Abonada:</label></td>
+			<td><input id="tasa_abonada" name="tasa_abonada" size="30" maxlength="40" type="text"></td>							
+		</tr>
+                
+                <tr>
+			<td><label for="contrato">Contrato:</label></td>
+			<td><input id="tasa_abonada" name="tasa_abonada" size="30" maxlength="40" type="text"></td>							
+		</tr>
+                
+                <tr>
+			<td><label for="notas">Notas:</label></td>
+			<td><input id="notas" name="notasa" size="30" maxlength="40" type="text"></td>							
+		</tr>
+                
+                <tr>
+			<td align="center" colspan="2"> 
+			<input type="submit" id="insertar" name="insertar" value="Insertar"/>
+			</td>
 		</tr>
                 
 	</tbody>
@@ -35,3 +62,26 @@
 	
 
 </table>
+</form>
+
+<?php
+
+	if (isset($_POST['insertar']))
+	{
+			
+            include('content/base_datos/conexion_bd.php');
+
+            $sql = "INSERT INTO `shelter`.`adopcion` (`DNI`, `chip_animal`, `fecha`, `tasas`, `tasa_abonadas`, `contrato`, `notas`) VALUES ('".$adoptante."', '".$animal."', '".$_POST['fecha']."', '".$_POST['tasas']."', '".$_POST['tasa_abonada']."', '".$_POST['contrato']."', '".$_POST['notas']."');";
+
+            $res = mysqli_query($conexion_bd, $sql);
+
+            if($res == 1)
+            {
+                    echo "Insercion Correcta";
+            }else
+            {
+                    echo "Insercion falillda";
+            }
+        }
+
+?>

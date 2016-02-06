@@ -14,10 +14,14 @@
                         
                             include('content/base_datos/conexion_bd.php');
 
-                            $sql = "SELECT * FROM animal";
+                            $sql = "SELECT * FROM animal WHERE chip_animal NOT IN (SELECT chip_animal FROM adopcion)";
 
                             $res = mysqli_query($conexion_bd, $sql);
-
+                            
+                            echo '<tr>
+                                    <td><h2>Selecciona Animal:</h2></td>
+                                </tr>';
+                            
                             while($row = mysqli_fetch_assoc($res))
                             {
                                     echo '<tr>
@@ -56,7 +60,11 @@
                             $sql = "SELECT * FROM adoptante";
 
                             $res = mysqli_query($conexion_bd, $sql);
-
+                            
+                             echo '<tr>
+                                    <td><h2>Selecciona Adoptante:</h2></td>
+                                </tr>';
+                            
                             while($row = mysqli_fetch_assoc($res))
                             {
                                     echo '<tr>
