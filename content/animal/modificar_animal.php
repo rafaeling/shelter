@@ -16,7 +16,7 @@
                         {
                             $user = isset($_GET["user"]) ? $_GET["user"] : '';
                             
-                            $sql = "DELETE FROM animal WHERE DNI='".$user."'";
+                            $sql = "DELETE FROM animal WHERE chip_animal='".$user."'";
                             
                             $res = mysqli_query($conexion_bd, $sql);
                         }

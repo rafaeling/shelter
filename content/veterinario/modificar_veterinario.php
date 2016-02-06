@@ -16,7 +16,7 @@
                         {
                             $user = isset($_GET["user"]) ? $_GET["user"] : '';
                             
-                            $sql = "DELETE FROM veterinario WHERE DNI='".$user."'";
+                            $sql = "DELETE FROM veterinario WHERE nombre='".$user."'";
                             
                             $res = mysqli_query($conexion_bd, $sql);
                         }
