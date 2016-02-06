@@ -2,14 +2,14 @@
 						
 	<tbody>
 		<tr>
-			<td><h2>Usuarios</h2></td>
+			<td><h2>Padrinos:</h2></td>
 		</tr>
 
 		<?php
 
 			include('content/base_datos/conexion_bd.php');
 
-			$sql = "SELECT * FROM usuario";
+			$sql = "SELECT * FROM padrino";
 			
 			$res = mysqli_query($conexion_bd, $sql);
 
@@ -22,11 +22,11 @@
 							<div id="usuario">
 
 								<label for="name_usuario">Nombre: </label>
-								<label id="nombre_usuario">'.$row["nombre_user"].'<br></label>
-								<label for="apellido_usuario">Apellido Usuario: </label>
-								<label id="apellido_user">'.$row["apellido_user"].'<br></label>
-								<label for="dni_usuario">DNI Usuario: </label>
-								<label id="dni_user">'.$row["dni_user"].'<br></label>
+								<label id="nombre_usuario">'.$row["nombre"].'<br></label>
+								<label for="dni_usuario">DNI: </label>
+								<label id="dni_user">'.$row["DNI"].'<br></label>
+                                                                <label for="direccion">Dirección: </label>
+								<label id="direccion">'.$row["direccion"].'<br></label>
 							</div>
 						</td>
 
