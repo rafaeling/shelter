@@ -72,7 +72,7 @@
 
 			if($res == 1)
 			{
-                            header('Location: content/casa_de_acogida/modificar_casa_de_acogida.php');
+                            header('Location: index.php?t=casa_acogida');
 			}else
 			{
 				echo "Insercion falillda";
