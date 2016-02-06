@@ -62,13 +62,13 @@
 
 						<td>
 							<div id="animal">
-								<br><a href="index.php?t=veterinario_change&user='.$row["DNI"].'">Modificar </a>'.$row["nombre"].'</br>
+								<br><a href="index.php?t=veterinario_change&user='.$row["nombre"].'">Modificar </a>'.$row["nombre"].'</br>
 							</div>
 						</td>
                                                 
 <td>
 							<div id="animal">
-								<br><a href="index.php?t=modificar_veterinario&eliminar=true&user='.$row["DNI"].'"> Eliminar </a>'.$row["nombre"].'</br>
+								<br><a href="index.php?t=modificar_veterinario&eliminar=true&user='.$row["nombre"].'"> Eliminar </a>'.$row["nombre"].'</br>
 							</div>
 						</td>
 					</tr>';

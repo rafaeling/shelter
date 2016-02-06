@@ -70,7 +70,7 @@
                                                 
 <td>
 							<div id="animal">
-								<br><a href="index.php?t=modificar_animal&eliminar=true&user='.$row["DNI"].'"> Eliminar </a>'.$row["nombre"].'</br>
+								<br><a href="index.php?t=modificar_animal&eliminar=true&user='.$row["chip_animal"].'"> Eliminar </a>'.$row["chip_animal"].'</br>
 							</div>
 						</td>
 					</tr>';
