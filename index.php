@@ -185,6 +185,26 @@
 		
 					include 'content/usuario/userchange.php';
 			
+                                }else if ($t == "padrino_change") {
+		
+					include 'content/padrino/userchange.php';
+			
+				}else if ($t == "casa_de_acogida_change") {
+		
+					include 'content/casa_de_acogida/userchange.php';
+			
+				}else if ($t == "socio_change") {
+		
+					include 'content/socio/userchange.php';
+			
+				}else if ($t == "veterinario_change") {
+		
+					include 'content/veterinario/userchange.php';
+			
+				}else if ($t == "voluntario_change") {
+		
+					include 'content/voluntario/userchange.php';
+			
 				}else if ($t == "voluntario") {
 		
 					include 'content/voluntario.php';
