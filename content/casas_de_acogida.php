@@ -1,22 +1,14 @@
 <ul>
 	<li>
-		<a href="index.php?t=nuevo_usuario">Nuevo Usuario</a>
+		<a href="index.php?t=nueva_casa_de_acogida">Nueva casa_de_acogida</a>
 	</li>
 		
 	<li>
-		<a href="index.php?t=modificar_usuario">Modificar Usuario</a>
+		<a href="index.php?t=modificar_casa_de_acogida">Modificar casa_de_acogida</a>
 	</li>
 
 	<li>
-		<a href="index.php?t=dar_baja_usuario">Dar Baja Usuario</a>
-	</li>
-	
-	<li>
-		<a href="index.php?t=enviar_evento_usuario">Enviar Evento</a>
-	</li>
-
-	<li>
-		<a href="index.php?t=enviar_factura_usuario">Enviar Factura</a>
+		<a href="index.php?t=dar_baja_casa_de_acogida">Dar de baja casa_de_acogida</a>
 	</li>
 	
 				

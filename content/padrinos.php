@@ -1,22 +1,14 @@
 <ul>
 	<li>
-		<a href="index.php?t=nuevo_usuario">Nuevo Usuario</a>
+		<a href="index.php?t=nuevo_padrino">Nuevo padrino</a>
 	</li>
 		
 	<li>
-		<a href="index.php?t=modificar_usuario">Modificar Usuario</a>
+		<a href="index.php?t=modificar_padrino">Modificar padrino</a>
 	</li>
 
 	<li>
-		<a href="index.php?t=dar_baja_usuario">Dar Baja Usuario</a>
-	</li>
-	
-	<li>
-		<a href="index.php?t=enviar_evento_usuario">Enviar Evento</a>
-	</li>
-
-	<li>
-		<a href="index.php?t=enviar_factura_usuario">Enviar Factura</a>
+		<a href="index.php?t=dar_baja_padrino">Dar de baja padrino</a>
 	</li>
 	
 				
