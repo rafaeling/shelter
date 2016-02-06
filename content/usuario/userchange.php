@@ -164,6 +164,11 @@
 				</td>							
 			</tr>
 
+                        <tr>
+				<td align="center" colspan="2"> 
+					<input type="submit" id="modificar" name="modificar" value="Modificar"/>
+				</td>
+			</tr>
 					
 					
 	</tbody>

@@ -2,7 +2,7 @@
 						
 	<tbody>
 		<tr>
-			<td><h2>Casas de acogida:</h2></td>
+			<td><h2>Casa de acogida:</h2></td>
 		</tr>
 
 		<?php
@@ -22,11 +22,11 @@
 							<div id="usuario">
 
 								<label for="name_usuario">Nombre: </label>
-								<label id="nombre_usuario">'.$row["nombre"].'<br></label>
-								<label for="dni_usuario">DNI: </label>
-								<label id="dni_user">'.$row["DNI"].'<br></label>
-                                                                <label for="direccion">Direccion: </label>
-								<label id="direccion">'.$row["direccion"].'<br></label>
+								<label id="nombre_usuario">'.$row["nombre_user"].'<br></label>
+								<label for="apellido_usuario">Apellido Usuario: </label>
+								<label id="apellido_user">'.$row["apellido_user"].'<br></label>
+								<label for="dni_usuario">DNI Usuario: </label>
+								<label id="dni_user">'.$row["dni_user"].'<br></label>
 							</div>
 						</td>
 
