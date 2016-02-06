@@ -207,19 +207,19 @@
 			
 				}else if ($t == "voluntario") {
 		
-					include 'content/voluntario.php';
+					include 'content/voluntario/modificar_voluntario.php';
 			
 				}else if ($t == "socio") {
 		
-					include 'content/socio.php';
+					include 'content/socio/modificar_socio.php';
 			
 				}else if ($t == "veterinario") {
 		
-					include 'content/veterinario.php';
+					include 'content/veterinario/modificar_veterinario.php';
 			
 				}else if ($t == "padrino") {
 		
-					include 'content/padrinos.php';
+					include 'content/padrinos/modificar_padrino.php';
 			
 				}else if ($t == "adoptante") {
 		
@@ -227,7 +227,7 @@
 			
 				}else if ($t == "casa_acogida") {
 		
-					include 'content/casas_de_acogida.php';
+					include 'content/casas_de_acogida/modificar_casa_de_acogida.php';
 			
 				}else if ($t == "nuevo_adoptante") {
 		

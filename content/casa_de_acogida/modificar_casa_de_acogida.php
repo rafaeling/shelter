@@ -1,18 +1,48 @@
 <table>
 						
 	<tbody>
-		<tr>
-			<td><h2>Casas de acogida:</h2></td>
-		</tr>
+		
 
 		<?php
-
-			include('content/base_datos/conexion_bd.php');
-
+                
+                        
+                        
+                        $eliminar = isset($_GET["eliminar"]) ? $_GET["eliminar"] : '';
+		
+                        
+                        include('content/base_datos/conexion_bd.php');
+                        
+                        if($eliminar == 'true')
+                        {
+                            $user = isset($_GET["user"]) ? $_GET["user"] : '';
+                            
+                            $sql = "DELETE FROM casa_de_acogida WHERE DNI='".$user."'";
+                            
+                            $res = mysqli_query($conexion_bd, $sql);
+                        }
+                        
+                        
+                        
+                        
+                     
+                        
+                        
 			$sql = "SELECT * FROM casa_de_acogida";
 			
 			$res = mysqli_query($conexion_bd, $sql);
-
+                        
+                        
+                        echo '<tr>
+                            <td>
+							<div id="animal">
+								<br><a href="index.php?t=nueva_casa_de_acogida"> Nueva casa de acogida </a></br>
+							</div>
+						</td>
+			</tr>
+                        <tr>
+			<td><h2>Casas de acogida:</h2></td>
+		</tr>';
+                        
 			while($row = mysqli_fetch_assoc($res))
 			{
 				echo '<tr>
