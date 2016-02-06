@@ -29,12 +29,17 @@
 			<div id="menu_icon"></div>
 			<nav>
 				<ul>
-					<li id="menu_bottom"><a href="index.php?t=animales">Gestionar Animales</a></li>
-					<li id="menu_bottom"><a href="index.php?t=usuarios">Gestionar Usuarios</a></li>
-					<li id="menu_bottom"><a href="index.php?t=adopciones">Gestionar Adopciones</a></li>
-					<li id="menu_bottom"><a href="index.php?t=acogidas">Gestionar Acogidas</a></li>
-					<li id="menu_bottom"><a href="index.php?t=eventos">Gestionar Eventos</a></li>
-					<li id="menu_bottom"><a href="index.php?t=recursos">Gestionar Recursos</a></li>
+					<li id="menu_bottom"><a href="index.php?t=animales">Animales</a></li>
+					<li id="menu_bottom"><a href="index.php?t=voluntario">Voluntario</a></li>
+                                        <li id="menu_bottom"><a href="index.php?t=casa_acogida">Casa Acogida</a></li>
+                                        <li id="menu_bottom"><a href="index.php?t=adoptante">Adoptante</a></li>
+                                        <li id="menu_bottom"><a href="index.php?t=padrino">Padrino</a></li>
+                                        <li id="menu_bottom"><a href="index.php?t=veterinario">Veterinario</a></li>
+                                        <li id="menu_bottom"><a href="index.php?t=socio">Socio</a></li>
+					<li id="menu_bottom"><a href="index.php?t=adopciones">Adopciones</a></li>
+					<li id="menu_bottom"><a href="index.php?t=acogidas">Acogidas</a></li>
+					<li id="menu_bottom"><a href="index.php?t=eventos">Eventos</a></li>
+					<li id="menu_bottom"><a href="index.php?t=recursos">Recursos</a></li>
 				</ul>
 			</nav><!-- end navigation menu -->
 
