@@ -32,7 +32,7 @@
 
 						<td>
 							<div id="animal">
-								<br><a href="index.php?t=userchange&user='.$row["dni_user"].'">Modificar </a>'.$row["nombre_user"].'</br>
+								<br><a href="index.php?t=userchange&user='.$row["DNI"].'">Modificar </a>'.$row["nombre"].'</br>
 							</div>
 						</td>
 					</tr>';
