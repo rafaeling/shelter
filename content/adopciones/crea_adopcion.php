@@ -28,7 +28,7 @@
 					
 		<tr>
 			<td><label for="fecha">Fecha:</label></td>
-			<td><input id="fecha" name="fecha" size="30" maxlength="40" type="text"></td>							
+			<td><input id="fecha" name="fecha" size="30" maxlength="40" type="date"></td>							
 		</tr>
                 
                 <tr>
