@@ -203,7 +203,7 @@
 			
 				}else if ($t == "adoptante") {
 		
-					include 'content/adoptantes.php';
+					include 'content/adoptantes/modificar_adoptante.php';
 			
 				}else if ($t == "casa_acogida") {
 		

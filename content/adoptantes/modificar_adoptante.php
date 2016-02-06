@@ -1,9 +1,7 @@
 <table>
 						
 	<tbody>
-		<tr>
-			<td><h2>Adoptantes:</h2></td>
-		</tr>
+		
 
 		<?php
 
@@ -19,7 +17,10 @@
 								<br><a href="index.php?t=nuevo_adoptante'.$row["DNI"].'"> Nuevo adoptante </a>'.$row["nombre"].'</br>
 							</div>
 						</td>
-			</tr>';
+			</tr>
+                        <tr>
+			<td><h2>Adoptantes:</h2></td>
+		</tr>';
                         
 			while($row = mysqli_fetch_assoc($res))
 			{
