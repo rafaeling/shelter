@@ -10,6 +10,8 @@
 		<link rel="stylesheet" type="text/css" href="css/style.css">
 	    <script type="text/javascript" src="js/jquery.js"></script>
 	    <script type="text/javascript" src="js/main.js"></script>
+	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+
 	</head>
 
 	<body>
@@ -169,6 +171,10 @@
 				}else if ($t == "modificando") {
 		
 					include 'content/animal/modificando.php';
+			
+				}else if ($t == "userchange") {
+		
+					include 'content/usuario/userchange.php';
 			
 				}
 
