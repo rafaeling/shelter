@@ -72,7 +72,7 @@
 
 			if($res == 1)
 			{
-				echo "Insercion Correcta";
+                            header('Location: content/casa_de_acogida/modificar_casa_de_acogida.php');
 			}else
 			{
 				echo "Insercion falillda";
