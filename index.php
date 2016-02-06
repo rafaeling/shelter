@@ -205,7 +205,45 @@
 		
 					include 'content/casas_de_acogida.php';
 			
+				}else if ($t == "nuevo_adoptante") {
+		
+					include 'content/adoptantes/nuevo_adoptante.php';
+			
+				}else if ($t == "modificar_adoptante") {
+		
+					include 'content/adoptantes/modificar_adoptante.php';
+			
+				}else if ($t == "dar_baja_adoptante") {
+		
+					include 'content/adoptantes/dar_baja_adoptante.php';
+			
+				}else if ($t == "nueva_casa_de_acogida") {
+		
+					include 'content/casa_de_acogida/nueva_casa_de_acogida.php';
+			
+				}else if ($t == "modificar_casa_de_acogida") {
+		
+					include 'content/casa_de_acogida/modificar_casa_de_acogida.php';
+			
+				}else if ($t == "dar_baja_casa_de_acogida") {
+		
+					include 'content/casa_de_acogida/dar_baja_casa_de_acogida.php';
+			
+				}else if ($t == "dar_baja_padrino") {
+		
+					include 'content/padrinos/dar_baja_padrino.php';
+			
+				}else if ($t == "modificar_padrino") {
+		
+					include 'content/padrinos/modificar_padrino.php';
+			
+				}else if ($t == "nuevo_padrino") {
+		
+					include 'content/padrinos/nuevo_padrino.php';
+			
 				}
+                                
+                                
                                 
                                 
 
