@@ -14,9 +14,10 @@
                         
                         if($eliminar == 'true')
                         {
-                            $user = isset($_GET["user"]) ? $_GET["user"] : '';
+                            $animal = isset($_GET["animal"]) ? $_GET["animal"] : '';
+                            $adoptante = isset($_GET["adoptante"]) ? $_GET["adoptante"] : '';
                             
-                            $sql = "DELETE FROM animal WHERE DNI='".$user."'";
+                            $sql = "DELETE FROM adopcion WHERE chip_animal='".$animal."' AND DNI='".$adoptante."'";
                             
                             $res = mysqli_query($conexion_bd, $sql);
                         }
@@ -27,7 +28,7 @@
                      
                         
                         
-			$sql = "SELECT * FROM animal";
+			$sql = "SELECT * FROM adopcion, animal, adoptante WHERE adopcion.DNI=adoptante.DNI AND animal.chip_animal= adopcion.chip_animal";
 			
 			$res = mysqli_query($conexion_bd, $sql);
                         
@@ -35,12 +36,12 @@
                         echo '<tr>
                             <td>
 							<div id="animal">
-								<br><a href="index.php?t=nuevo_animal"> Nuevo animal </a></br>
+								<br><a href="index.php?t=nueva_adopcion"> Nueva adopcion </a></br>
 							</div>
 						</td>
 			</tr>
                         <tr>
-			<td><h2>Animales:</h2></td>
+			<td><h2>Adopciones:</h2></td>
 		</tr>';
                         
 			while($row = mysqli_fetch_assoc($res))
@@ -61,16 +62,28 @@
 								<label id="chip_animal">'.$row["chip_animal"].'<br></label>
 							</div>
 						</td>
+                                                
+						<td>
+							<div id="usuario">
+
+								<label for="name_usuario">Nombre: </label>
+								<label id="nombre_usuario">'.$row["nombre"].'<br></label>
+								<label for="dni_usuario">DNI: </label>
+								<label id="dni_user">'.$row["DNI"].'<br></label>
+                                                                <label for="direccion">Dirección: </label>
+								<label id="direccion">'.$row["direccion"].'<br></label>
+							</div>
+						</td>
 
 						<td>
 							<div id="animal">
-								<br><a href="index.php?t=modificando&animal='.$row["chip_animal"].'">Modificar </a>'.$row["nombre_animal"].'</br>
+								<a href="index.php?t=adopcion_change&animal='.$row["chip_animal"].'">Modificar </a>'.'
 							</div>
 						</td>
                                                 
 <td>
 							<div id="animal">
-								<br><a href="index.php?t=modificar_animal&eliminar=true&user='.$row["DNI"].'"> Eliminar </a>'.$row["nombre"].'</br>
+								<a href="index.php?t=modificar_adopcion&eliminar=true&animal='.$row["chip_animal"].'&adoptante='.$row["DNI"].'"> Eliminar </a>'.'
 							</div>
 						</td>
 					</tr>';

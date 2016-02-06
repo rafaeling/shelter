@@ -79,7 +79,7 @@
 			
 				}else if ($t == "adopciones") {
 		
-					include 'content/gestionar_adopciones.php';
+					include 'content/adopciones/modificar_adopcion.php';
 			
 				}else if ($t == "animales") {
 		
@@ -173,9 +173,9 @@
 		
 					include 'content/adopciones/modificar_adopcion.php';
 			
-				}else if ($t == "modificar_adopcion") {
+				}else if ($t == "adopcion_change") {
 		
-					include 'content/adopciones/modificar_adopcion.php';
+					include 'content/adopciones/modificando.php';
 			
 				}else if ($t == "modificando") {
 		
