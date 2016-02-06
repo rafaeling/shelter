@@ -48,7 +48,7 @@
                 
                 <tr>
 			<td><label for="notas">Notas:</label></td>
-			<td><input id="notas" name="notasa" size="30" maxlength="40" type="text"></td>							
+			<td><input id="notas" name="notas" size="30" maxlength="40" type="text"></td>							
 		</tr>
                 
                 <tr>
@@ -71,7 +71,7 @@
 			
             include('content/base_datos/conexion_bd.php');
 
-            $sql = "INSERT INTO `shelter`.`adopcion` (`DNI`, `chip_animal`, `fecha`, `tasas`, `tasa_abonadas`, `contrato`, `notas`) VALUES ('".$adoptante."', '".$animal."', '".$_POST['fecha']."', '".$_POST['tasas']."', '".$_POST['tasa_abonada']."', '".$_POST['contrato']."', '".$_POST['notas']."');";
+            $sql = "INSERT INTO `shelter`.`adopcion` (`DNI`, `chip_animal`, `fecha`, `tasas`, `tasa_abonada`, `contrato`, `notas`) VALUES ('".$adoptante."', '".$animal."', '".$_POST['fecha']."', '".$_POST['tasas']."', '".$_POST['tasa_abonada']."', '".$_POST['contrato']."', '".$_POST['notas']."');";
 
             $res = mysqli_query($conexion_bd, $sql);
 
