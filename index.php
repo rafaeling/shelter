@@ -241,6 +241,18 @@
 		
 					include 'content/padrinos/nuevo_padrino.php';
 			
+				}else if ($t == "dar_baja_socio") {
+		
+					include 'content/socio/dar_baja_socio.php';
+			
+				}else if ($t == "modificar_socio") {
+		
+					include 'content/socio/modificar_socio.php';
+			
+				}else if ($t == "nuevo_socio") {
+		
+					include 'content/socio/nuevo_socio.php';
+			
 				}
                                 
                                 
