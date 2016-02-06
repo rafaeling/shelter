@@ -117,6 +117,10 @@
 		
 					include 'content/adopciones/nueva_adopcion.php';
 			
+				}else if ($t == "crea_adopcion") {
+		
+					include 'content/adopciones/crea_adopcion.php';
+                                        
 				}else if ($t == "nueva_acogida") {
 		
 					include 'content/acogidas/nueva_acogida.php';
@@ -208,7 +212,7 @@
 				}else if ($t == "nuevo_adoptante") {
 		
 					include 'content/adoptantes/nuevo_adoptante.php';
-			
+                                
 				}else if ($t == "modificar_adoptante") {
 		
 					include 'content/adoptantes/modificar_adoptante.php';
