@@ -67,7 +67,7 @@
 
 			if($res == 1)
 			{
-				echo "Insercion Correcta";
+				header('Location: index.php?t=veterinario');
 			}else
 			{
 				echo "Insercion falillda";
