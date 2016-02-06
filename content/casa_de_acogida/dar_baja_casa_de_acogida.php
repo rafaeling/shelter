@@ -7,8 +7,21 @@
 
 		<?php
 
+                        $user = isset($_GET["user"]) ? $_GET["user"] : '';
+		
+                
 			include('content/base_datos/conexion_bd.php');
 
+                        
+                        if($user != '')
+                        {
+                            
+                            $sql = "DELETE FROM casa_de_acogida WHERE DNI='".$user."'";
+                            
+                            $res = mysqli_query($conexion_bd, $sql);
+                        }
+                        
+                        
 			$sql = "SELECT * FROM casa_de_acogida";
 			
 			$res = mysqli_query($conexion_bd, $sql);
@@ -32,7 +45,7 @@
 
 						<td>
 							<div id="animal">
-								<br><a href="index.php?t=userchange&user='.$row["DNI"].'"> Eliminar </a>'.$row["nombre"].'</br>
+								<br><a href="index.php?t=dar_baja_casa_de_acogida&user='.$row["DNI"].'"> Eliminar </a>'.$row["nombre"].'</br>
 							</div>
 						</td>
 					</tr>';
