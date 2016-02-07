@@ -2,75 +2,70 @@
 	<li>
 		<a href="index.php?t=nuevo_evento">Crear Evento</a>
 	</li>
-		
-	<li>
-		<a href="index.php?t=modificar_evento">Modificar Evento</a>
-	</li>
-
-	<li>
-		<a href="index.php?t=sierra">Eliminar Evento</a>
-	</li>	
 </ul>
+
+<div class="eventos"> <!--Sección izquierda muestra eventos-->
+    <?php
+
+        $fecha = isset($_GET["fecha"]) ? $_GET["fecha"] : '';
+
+        if($fecha != '')
+        {
+            include('conexion_bd.php');
+
+            $sql = "SELECT * FROM evento WHERE fecha='".$fecha."'";
+
+            $res = mysqli_query($conexion_bd, $sql);
+
+            while($row = mysqli_fetch_assoc($res))
+            {
+                echo '<tr>
+
+                    <td>
+                            <div id="Evento">
+
+                                    <label for="tipo">Tipo: </label>
+                                    <label id="tipo">'.$row["tipo"].'<br></label>
+                            </div>
+                    </td>
+
+                    <td>
+                            <div id="ver">
+                                    <a href="index.php?t=modificar_evento&id_evento='.$row["id_evento"].'"> Ver </a>'.'
+                            </div>
+                    </td>
+
+                    <td>
+                            <div id="eliminar">
+                                    <a href="index.php?t=modificar_evento&eliminar=true&id_evento='.$row["id_evento"].'"> Eliminar </a>'.'
+                            </div>
+                    </td>
+                </tr>';
+            }    
+        }
+    ?>
+</div>
 
 
 
 <div id="test"></div>
-<!-- TWO STEPS TO INSTALL DYNAMIC CALENDAR:
-
-  1.  Copy the coding into the HEAD of your HTML document
-  2.  Add the last code into the BODY of your HTML document  -->
-
-<!-- STEP ONE: Paste this code into the HEAD of your HTML document  -->
 
 <script>
     var fecha;
-    var result;
-</script>
 
-
-<script>
-function aletoma(date) {
-    /*
-    var xmlhttp = new XMLHttpRequest();
-    xmlhttp.onreadystatechange = function() {
-        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-            document.getElementById("test").innerHTML = xmlhttp.responseText;
-        }
-    };
-    xmlhttp.open("GET", "test.php", true);
-    xmlhttp.send();
-    
-    */
-   var parametros;
-   $.ajax({
-                data:  parametros,
-                url:   'http://localhost/shelter/content/eventos/listar_eventos.php?fecha='+date,
-                type:  'post',
-                success: function(output) {
-                      $("#test").html(output)
-                      result = output;
-                      
-                      
-                      
-                },
-                
-                async: false
-                
-        });
+function showHint() { //Dibuja eventos
+        
+        window.location.href = 'index.php?t=eventos&fecha='+fecha;
     
 }
 </script>
 
 <SCRIPT LANGUAGE="JavaScript">
-
 var dDate = new Date();
 var dCurMonth = dDate.getMonth();
 var dCurDayOfMonth = dDate.getDate();
 var dCurYear = dDate.getFullYear();
 var objPrevElement = new Object();
-
-
-
 function fToggleColor(myElement) {
     var toggleColor = "#ff0000";
     if (myElement.id == "calDateText") {
@@ -102,7 +97,7 @@ function fSetSelectedDay(myElement){
             
             fecha = frmCalendarSample.tbSelYear.value + "-" + frmCalendarSample.tbSelMonth.value + "-" + document.all.calSelectedDate.value;
             
-            aletoma(fecha);
+            showHint();
             
            }
     }
@@ -184,17 +179,14 @@ document.write("<td align='left' valign='top' width='" + iCellWidth + "' height=
 if (!isNaN(myMonth[w][d])) {
 document.write("<font id=calDateText onMouseOver='fToggleColor(this)' style='CURSOR:Hand;FONT-FAMILY:Arial;FONT-SIZE:" + sDateTextSize + ";FONT-WEIGHT:" + sDateTextWeight + "' onMouseOut='fToggleColor(this)' onclick=fSetSelectedDay(this)>" + myMonth[w][d] + "</font>");
 } else {
-document.write("<font id=calDateText onMouseOver='fToggleColor(this)' style='CURSOR:Hand;FONT-FAMILY:Arial;FONT-SIZE:" + sDateTextSize + ";FONT-WEIGHT:" + sDateTextWeight + "' onMouseOut='fToggleColor(this)' onclick=fSetSelectedDay(this)> </font>");
+document.write("<font id=calDateText onMouseOver='fToggleColor(this)' style='CURSOR:Hand;FONT-FAMILY:Arial;FONT-SIZE:" + sDateTextSize + ";FONT-WEIGHT:" + sDateTextWeight + "' onMouseOut='fToggleColor(this)' onclick=fSetSelectedDay(this)> </font>");
 }
 document.write("</td>")
 }
 document.write("</tr>");
 }
 document.write("</table>")
-
-
     
-
 }
 function fUpdateCal(iYear, iMonth) {
 myMonth = fBuildCal(iYear, iMonth);
@@ -227,7 +219,6 @@ for (i = 0; i < frmCalendarSample.tbSelYear.length; i++)
 if (frmCalendarSample.tbSelYear.options[i].value == dCurDate.getFullYear())
 frmCalendarSample.tbSelYear.options[i].selected = true;
 //  End -->
-
 </script>
 
 <form name="frmCalendarSample" method="post" action="">
@@ -250,7 +241,7 @@ frmCalendarSample.tbSelYear.options[i].selected = true;
 <option value="11">November</option>
 <option value="12">December</option>
 </select>
-  
+  
 <select id="tbSelYear" name="tbSelYear" onchange='fUpdateCal(frmCalendarSample.tbSelYear.value, frmCalendarSample.tbSelMonth.value)'>
 <option value="2015">2015</option>
 <option value="2016">2016</option>
@@ -264,29 +255,6 @@ frmCalendarSample.tbSelYear.options[i].selected = true;
 </tr>
 <tr>
 <td>
-    
-<script>
-    function actulizar() {
-        
-        for(var i = 1; i<=2 ; i++)
-        {
-            fecha = document.getElementById("tbSelYear").value  + "-" + document.getElementById("tbSelMonth").value + "-" + i;
-           aletoma(fecha);
-            
-            
-            if(result.length != 1)
-            {
-                
-            }
-            
-        }
-    
-        
-    
-    }
-
-</script>
-    
 <script language="JavaScript">
 var dCurDate = new Date();
 fDrawCal(dCurDate.getFullYear(), dCurDate.getMonth()+1, 30, 30, "12px", "bold", 1);
@@ -294,15 +262,10 @@ fDrawCal(dCurDate.getFullYear(), dCurDate.getMonth()+1, 30, 30, "12px", "bold", 
     
     document.getElementById("tbSelMonth").value = dDate.getMonth()+1;
     
-    actulizar();
-    
 </script>
 </td>
 </tr>
 </table>
 </form>
 
-
-
 <!-- Script Size:  7.06 KB -->
-

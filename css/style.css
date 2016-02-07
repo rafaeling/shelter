@@ -25,6 +25,14 @@ header
 	border: 1px solid black;
 }
 
+.eventos
+{
+	position: relative;
+	margin-left: 350px;
+	top: -10px;
+	background-color: #D3D3D3;
+}
+
 #menu
 {
 	width: 250px;
