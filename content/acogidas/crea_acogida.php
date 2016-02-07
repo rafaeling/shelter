@@ -27,12 +27,12 @@
                     ?>
 					
 		<tr>
-			<td><label for="fecha_inicio">Fecha:</label></td>
+			<td><label for="fecha_inicio">Fecha Inicio:</label></td>
 			<td><input id="fecha_inicio" name="fecha_inicio" size="30" maxlength="40" type="date"></td>							
 		</tr>
                 
                 <tr>
-			<td><label for="fecha_fin">Fecha:</label></td>
+			<td><label for="fecha_fin">Fecha Fin:</label></td>
 			<td><input id="fecha_fin" name="fecha_fin" size="30" maxlength="40" type="date"></td>							
 		</tr>
                 
@@ -66,7 +66,7 @@
 			
             include('content/base_datos/conexion_bd.php');
 
-            $sql = "INSERT INTO `shelter`.`acogida` (`DNI`, `chip_animal`, `fecha`, `tasas`, `tasa_abonada`, `contrato`, `notas`) VALUES ('".$casa_de_acogida."', '".$animal."', '".$_POST['fecha_inicio']."', '".$_POST['fecha_fin']."', '".$_POST['contrato']."', '".$_POST['notas']."');";
+            $sql = "INSERT INTO `shelter`.`acogida` (`DNI`, `chip_animal`, `fecha_inicio`, `fecha_fin`, `contrato`, `notas`) VALUES ('".$casa_de_acogida."', '".$animal."', '".$_POST['fecha_inicio']."', '".$_POST['fecha_fin']."', '".$_POST['contrato']."', '".$_POST['notas']."');";
 
             $res = mysqli_query($conexion_bd, $sql);
 

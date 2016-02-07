@@ -106,9 +106,9 @@
 		
 					include 'content/acogidas/nueva_acogida.php';
                                                 
-				}else if ($t == "crear_acogida") {
+				}else if ($t == "crea_acogida") {
 		
-					include 'content/acogidas/crear_acogida.php';
+					include 'content/acogidas/crea_acogida.php';
 			
 				}else if ($t == "modificar_evento") {
 		
