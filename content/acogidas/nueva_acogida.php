@@ -14,7 +14,7 @@
                         
                             include('content/base_datos/conexion_bd.php');
 
-                            $sql = "SELECT * FROM animal WHERE chip_animal NOT IN (SELECT chip_animal FROM acogida)";
+                            $sql = "SELECT * FROM animal WHERE chip_animal NOT IN (SELECT chip_animal FROM adopcion)";
 
                             $res = mysqli_query($conexion_bd, $sql);
                             

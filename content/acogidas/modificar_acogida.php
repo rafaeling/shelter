@@ -17,7 +17,7 @@
                             $animal = isset($_GET["animal"]) ? $_GET["animal"] : '';
                             $casa_de_acogida = isset($_GET["casa_de_acogida"]) ? $_GET["casa_de_acogida"] : '';
                             
-                            $sql = "DELETE FROM acogida WHERE chip_animal='".$animal."' AND DNI='".$casa_de_acogida."'";
+                            $sql = "DELETE FROM acogida WHERE chip_animal='".$animal."' AND dni_casa_acogida='".$casa_de_acogida."'";
                             
                             $res = mysqli_query($conexion_bd, $sql);
                         }
@@ -28,7 +28,7 @@
                      
                         
                         
-			$sql = "SELECT * FROM acogida, animal, casa_de_acogida WHERE acogida.DNI=casa_de_acogida.DNI AND animal.chip_animal= acogida.chip_animal";
+			$sql = "SELECT * FROM acogida, animal, casa_de_acogida WHERE acogida.dni_casa_acogida=casa_de_acogida.dni_casa_acogida AND animal.chip_animal= acogida.chip_animal";
 			
 			$res = mysqli_query($conexion_bd, $sql);
                         
@@ -69,7 +69,7 @@
 								<label for="name_usuario">Nombre: </label>
 								<label id="nombre_usuario">'.$row["nombre"].'<br></label>
 								<label for="dni_usuario">DNI: </label>
-								<label id="dni_user">'.$row["DNI"].'<br></label>
+								<label id="dni_user">'.$row["dni_casa_acogida"].'<br></label>
                                                                 <label for="direccion">Dirección: </label>
 								<label id="direccion">'.$row["direccion"].'<br></label>
 							</div>
@@ -83,7 +83,7 @@
                                                 
 <td>
 							<div id="animal">
-								<a href="index.php?t=modificar_acogida&eliminar=true&animal='.$row["chip_animal"].'&casa_de_acogida='.$row["DNI"].'"> Eliminar </a>'.'
+								<a href="index.php?t=modificar_acogida&eliminar=true&animal='.$row["chip_animal"].'&casa_de_acogida='.$row["dni_casa_acogida"].'"> Eliminar </a>'.'
 							</div>
 						</td>
 					</tr>';
