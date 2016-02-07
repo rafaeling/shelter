@@ -16,8 +16,9 @@
                         {
                             $animal = isset($_GET["animal"]) ? $_GET["animal"] : '';
                             $casa_de_acogida = isset($_GET["casa_de_acogida"]) ? $_GET["casa_de_acogida"] : '';
+                            $fecha_inicio = isset($_GET["fecha_inicio"]) ? $_GET["fecha_inicio"] : '';
                             
-                            $sql = "DELETE FROM acogida WHERE chip_animal='".$animal."' AND dni_casa_acogida='".$casa_de_acogida."'";
+                            $sql = "DELETE FROM acogida WHERE chip_animal='".$animal."' AND dni_casa_acogida='".$casa_de_acogida."' AND fecha_inicio='".$fecha_inicio."'";
                             
                             $res = mysqli_query($conexion_bd, $sql);
                         }
@@ -28,7 +29,7 @@
                      
                         
                         
-			$sql = "SELECT * FROM acogida, animal, casa_de_acogida WHERE acogida.dni_casa_acogida=casa_de_acogida.dni_casa_acogida AND animal.chip_animal= acogida.chip_animal";
+			$sql = "SELECT * FROM acogida, animal, casa_de_acogida WHERE acogida.dni_casa_acogida=casa_de_acogida.dni AND animal.chip_animal= acogida.chip_animal";
 			
 			$res = mysqli_query($conexion_bd, $sql);
                         
@@ -76,14 +77,14 @@
 						</td>
 
 						<td>
-							<div id="animal">
-								<a href="index.php?t=acogida_change&animal='.$row["chip_animal"].'">Modificar </a>'.'
+							<div id="ver">
+								<a href="index.php?t=acogida_change&animal='.$row["chip_animal"].'&casa_de_acogida='.$row["dni_casa_acogida"].'&fecha_inicio='.$row["fecha_inicio"].'">Ver </a>'.'
 							</div>
 						</td>
                                                 
 <td>
-							<div id="animal">
-								<a href="index.php?t=modificar_acogida&eliminar=true&animal='.$row["chip_animal"].'&casa_de_acogida='.$row["dni_casa_acogida"].'"> Eliminar </a>'.'
+							<div id="eliminar">
+								<a href="index.php?t=modificar_acogida&eliminar=true&animal='.$row["chip_animal"].'&casa_de_acogida='.$row["dni_casa_acogida"].'&fecha_inicio='.$row["fecha_inicio"].'"> Eliminar </a>'.'
 							</div>
 						</td>
 					</tr>';
@@ -99,30 +100,3 @@
 	
 
 </table>
-
-
-
-
-<div>
-
-	<?php
-
-/*
-		include('content/base_datos/conexion_bd.php');
-
-		$sql = "SELECT nombre_animal FROM animal WHERE chip_animal='26820455V'";
-		
-		$res = mysqli_query($conexion_bd, $sql);
-
-		$row = mysqli_fetch_assoc($res);
-
-		mysqli_close($conexion_bd);
-				
-		echo '<div> <h1>Bienvenido, '.$row['nombre_animal'].'</h1></div>';
-*/
-	?>
-
-
-
-</div>
-

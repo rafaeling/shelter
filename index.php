@@ -108,7 +108,15 @@
                                                 
 				}else if ($t == "crea_acogida") {
 		
-					include 'content/acogidas/crea_acogida.php';
+					include 'content/acogidas/crea_acogida.php'; 
+                                                        
+				}else if ($t == "modificar_acogida") {
+		
+					include 'content/acogidas/modificar_acogida.php';
+                                                                            
+				}else if ($t == "acogida_change") {
+		
+					include 'content/acogidas/modificando.php';
 			
 				}else if ($t == "modificar_evento") {
 		

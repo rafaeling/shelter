@@ -5,6 +5,7 @@
 						
 	$animal = isset($_GET["animal"]) ? $_GET["animal"] : '';
         $casa_de_acogida = isset($_GET["casa_de_acogida"]) ? $_GET["casa_de_acogida"] : '';
+        $fecha_inicio = isset($_GET["fecha_inicio"]) ? $_GET["fecha_inicio"] : '';
 
 
 		if (isset($_POST['modificar']))
@@ -12,15 +13,15 @@
 			
 			include('content/base_datos/conexion_bd.php');
 
-			$sql = "UPDATE `acogida` SET fecha_fin='".$_POST['fecha_fin']."' WHERE chip_animal='".$animal."' AND dni_casa_acogida='".$casa_de_acogida."'";
+			$sql = "UPDATE `acogida` SET fecha_fin='".$_POST['fecha_fin']."' WHERE chip_animal='".$animal."' AND dni_casa_acogida='".$casa_de_acogida."' AND fecha_inicio='".$fecha_inicio."'";
 
 			$res = mysqli_query($conexion_bd, $sql);
                         
-                        $sql = "UPDATE `acogidan` SET contrato='".$_POST['contrato']."' WHERE chip_animal='".$animal."' AND dni_casa_acogida='".$casa_de_acogida."'";
+                        $sql = "UPDATE `acogidan` SET contrato='".$_POST['contrato']."' WHERE chip_animal='".$animal."' AND dni_casa_acogida='".$casa_de_acogida."' AND fecha_inicio='".$fecha_inicio."'";
 
 			$res = mysqli_query($conexion_bd, $sql);
                         
-                        $sql = "UPDATE `acogidan` SET notas='".$_POST['notas']."' WHERE chip_animal='".$animal."' AND dni_casa_acogida='".$casa_de_acogida."'";
+                        $sql = "UPDATE `acogidan` SET notas='".$_POST['notas']."' WHERE chip_animal='".$animal."' AND dni_casa_acogida='".$casa_de_acogida."' AND fecha_inicio='".$fecha_inicio."'";
 
 			$res = mysqli_query($conexion_bd, $sql);
 
@@ -43,7 +44,7 @@
 
 			include('content/base_datos/conexion_bd.php');
 
-			$sql = "SELECT * FROM acogidan,animal,casa_de_acogida WHERE acogidan.chip_animal='".$animal."' AND acogidan.dni_casa_acogida='".$casa_de_acogida."' AND acogidan.chip_animal=animal.chip_animal AND acogidan.dni_casa_acogida=casa_de_acogida.dni_casa_acogida";
+			$sql = "SELECT * FROM acogidan,animal,casa_de_acogida WHERE acogidan.chip_animal='".$animal."' AND acogidan.dni_casa_acogida='".$casa_de_acogida."' AND acogidan.chip_animal=animal.chip_animal AND acogidan.dni_casa_acogida=casa_de_acogida.dni";
 			
 			$res = mysqli_query($conexion_bd, $sql);
 

@@ -74,13 +74,13 @@
 						</td>
 
 						<td>
-							<div id="adopcion">
+							<div id="ver">
 								<a href="index.php?t=adopcion_change&animal='.$row["chip_animal"].'&adoptante='.$row["DNI"].'">Ver </a>'.'
 							</div>
 						</td>
                                                 
 <td>
-							<div id="adopcion">
+							<div id="eliminar">
 								<a href="index.php?t=modificar_adopcion&eliminar=true&animal='.$row["chip_animal"].'&adoptante='.$row["DNI"].'"> Eliminar </a>'.'
 							</div>
 						</td>
@@ -97,30 +97,3 @@
 	
 
 </table>
-
-
-
-
-<div>
-
-	<?php
-
-/*
-		include('content/base_datos/conexion_bd.php');
-
-		$sql = "SELECT nombre_animal FROM animal WHERE chip_animal='26820455V'";
-		
-		$res = mysqli_query($conexion_bd, $sql);
-
-		$row = mysqli_fetch_assoc($res);
-
-		mysqli_close($conexion_bd);
-				
-		echo '<div> <h1>Bienvenido, '.$row['nombre_animal'].'</h1></div>';
-*/
-	?>
-
-
-
-</div>
-
