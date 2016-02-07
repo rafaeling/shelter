@@ -4,8 +4,16 @@
 	<?php
 						
 	$evento = isset($_GET["id_evento"]) ? $_GET["id_evento"] : '';
+        $eliminar = isset($_GET["eliminar"]) ? $_GET["eliminar"] : '';
 
-
+                        if($eliminar == 'true')
+                        {
+                            $id_evento = isset($_GET["id_evento"]) ? $_GET["id_evento"] : '';
+                            
+                            $sql = "DELETE FROM evento WHERE id_evento='".$id_evento."'";
+                            
+                            $res = mysqli_query($conexion_bd, $sql);
+                        }
 		if (isset($_POST['modificar']))
 		{
 			
@@ -123,7 +131,11 @@ echo '<td><h3>'. $row['nombre_animal'].' </h3></td>';
 				<?php echo  '<td><input id="lista_correos" name="lista_correos" size="30" maxlength="40" type="text" value="'.$row['notas_animal'].'"></td>'	?>								
 			</tr>
 
-	
+                        <tr>
+				<td align="center" colspan="2"> 
+					<input type="submit" id="modificar" name="modificar" value="Modificar"/>
+				</td>
+			</tr>
 					
 	</tbody>
 	</table>
