@@ -73,7 +73,7 @@
 
             if($res == 1)
             {
-                    header('Location: index.php?t=evento');
+                    header('Location: index.php?t=eventos');
             }else
             {
                     echo "Insercion falillda";
