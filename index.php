@@ -172,7 +172,7 @@
 			
                                 }else if ($t == "padrino_change") {
 		
-					include 'content/padrino/userchange.php';
+					include 'content/padrinos/userchange.php';
 			
 				}else if ($t == "casa_de_acogida_change") {
 		
