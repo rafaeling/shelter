@@ -1,16 +1,15 @@
-
 <!DOCTYPE html>
 <html lang="es">
 	<head>
 		<title>Shelter</title>
 		<meta charset="utf-8">
-		<meta name="author" content="pixelhint.com">
-		<meta name="description" content="Magnetic is a stunning responsive HTML5/CSS3 photography/portfolio website template"/>
+		<meta name="author" content="Rafa, Erik & Alex">
+		<meta name="description" content="ERP Shelter"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
 		<link rel="stylesheet" type="text/css" href="css/style.css">
 	    <script type="text/javascript" src="js/jquery.js"></script>
 	    <script type="text/javascript" src="js/main.js"></script>
-	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+	    <script src="https://github.com/rafaeling/shelter"></script>
 
 	</head>
 
@@ -50,12 +49,8 @@
 
 		<div class="content">
 			<div class="formulario">
-	
-
-
 
 			<?php
-				//$t = $_GET["t"];
 		
 				$t = isset($_GET["t"]) ? $_GET["t"] : '';
 		
