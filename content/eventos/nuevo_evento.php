@@ -45,7 +45,13 @@
                         
 			<tr>
                                 <td><label for="correos">Correos:</label></td>
-                                <td><input id="correos" name="correos" size="30" maxlength="500" type="email"></td>							
+                                <td><input id="correos" name="correos" size="30" maxlength="500" type="text"></td>							
+                        </tr>
+                        
+                        <tr>
+                                <td align="center" colspan="2"> 
+                                <input type="submit" id="insertar" name="insertar" value="Insertar"/>
+                                </td>
                         </tr>
 					
 	</tbody>
