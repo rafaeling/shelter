@@ -9,8 +9,7 @@
 
 	<li>
 		<a href="index.php?t=sierra">Eliminar Evento</a>
-	</li>
-		<button onClick="showHint()">Click me</button>		
+	</li>	
 </ul>
 
 
@@ -22,6 +21,10 @@
   2.  Add the last code into the BODY of your HTML document  -->
 
 <!-- STEP ONE: Paste this code into the HEAD of your HTML document  -->
+
+<script>
+    var fecha;
+</script>
 
 
 <script>
@@ -41,7 +44,7 @@ function showHint() {
    
    $.ajax({
                 data:  parametros,
-                url:   'http://localhost/shelter/content/eventos/listar_eventos.php',
+                url:   'http://localhost/shelter/content/eventos/listar_eventos.php?fecha='+fecha,
                 type:  'post',
                 success: function(output) {
                       $("#test").html(output)
@@ -58,6 +61,8 @@ var dCurMonth = dDate.getMonth();
 var dCurDayOfMonth = dDate.getDate();
 var dCurYear = dDate.getFullYear();
 var objPrevElement = new Object();
+
+
 
 function fToggleColor(myElement) {
     var toggleColor = "#ff0000";
@@ -88,9 +93,10 @@ function fSetSelectedDay(myElement){
             document.all.calSelectedDate.value = parseInt(myElement.children["calDateText"].innerText);
             objPrevElement = myElement;
             
+            fecha = frmCalendarSample.tbSelYear.value + "-" + frmCalendarSample.tbSelMonth.value + "-" + document.all.calSelectedDate.value;
             
+            showHint();
             
-               $("#test").html(document.all.calSelectedDate.value + frmCalendarSample.tbSelMonth.value + frmCalendarSample.tbSelYear.value);
            }
     }
 }
@@ -178,6 +184,10 @@ document.write("</td>")
 document.write("</tr>");
 }
 document.write("</table>")
+
+
+    
+
 }
 function fUpdateCal(iYear, iMonth) {
 myMonth = fBuildCal(iYear, iMonth);
@@ -210,6 +220,7 @@ for (i = 0; i < frmCalendarSample.tbSelYear.length; i++)
 if (frmCalendarSample.tbSelYear.options[i].value == dCurDate.getFullYear())
 frmCalendarSample.tbSelYear.options[i].selected = true;
 //  End -->
+
 </script>
 
 <form name="frmCalendarSample" method="post" action="">
@@ -218,7 +229,7 @@ frmCalendarSample.tbSelYear.options[i].selected = true;
 <table border="1">
 <tr>
 <td>
-<select name="tbSelMonth" onchange='fUpdateCal(frmCalendarSample.tbSelYear.value, frmCalendarSample.tbSelMonth.value)'>
+<select id="tbSelMonth" name="tbSelMonth" onchange='fUpdateCal(frmCalendarSample.tbSelYear.value, frmCalendarSample.tbSelMonth.value)'>
 <option value="1">January</option>
 <option value="2">February</option>
 <option value="3">March</option>
@@ -233,7 +244,7 @@ frmCalendarSample.tbSelYear.options[i].selected = true;
 <option value="12">December</option>
 </select>
   
-<select name="tbSelYear" onchange='fUpdateCal(frmCalendarSample.tbSelYear.value, frmCalendarSample.tbSelMonth.value)'>
+<select id="tbSelYear" name="tbSelYear" onchange='fUpdateCal(frmCalendarSample.tbSelYear.value, frmCalendarSample.tbSelMonth.value)'>
 <option value="2015">2015</option>
 <option value="2016">2016</option>
 <option value="2017">2017</option>
@@ -249,6 +260,10 @@ frmCalendarSample.tbSelYear.options[i].selected = true;
 <script language="JavaScript">
 var dCurDate = new Date();
 fDrawCal(dCurDate.getFullYear(), dCurDate.getMonth()+1, 30, 30, "12px", "bold", 1);
+    document.getElementById("tbSelYear").value = dDate.getFullYear();
+    
+    document.getElementById("tbSelMonth").value = dDate.getMonth()+1;
+    
 </script>
 </td>
 </tr>
