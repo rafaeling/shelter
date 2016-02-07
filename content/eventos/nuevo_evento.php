@@ -1,3 +1,28 @@
+<?php
+
+	if (isset($_POST['insertar']))
+	{
+			
+            include('content/base_datos/conexion_bd.php');
+
+            $sql = "INSERT INTO `shelter`.`evento` (`id_evento`, `fecha`, `tipo`, `realizado`, `notas`, `lista_correos`) VALUES ('','".$_POST['fecha']."', '".$_POST['tipo']."', '".$_POST['realizado']."', '".$_POST['notas']."', '".$_POST['lista_correos']."');";
+
+            $res = mysqli_query($conexion_bd, $sql);
+
+            if($res == 1)
+            {
+                    
+                header('Location: http://localhost/shelter/index.php?t=eventos');
+                    
+                
+            }else
+            {
+                    echo "Insercion falillda";
+            }
+        }
+
+?>
+
 <form id="formulario_usuario" action="<?php $_SERVER['PHP_SELF'] ?>" method="POST">
 <table>
 						
@@ -59,24 +84,3 @@
     </table>
 </form>
 
-<?php
-
-	if (isset($_POST['insertar']))
-	{
-			
-            include('content/base_datos/conexion_bd.php');
-
-            $sql = "INSERT INTO `shelter`.`evento` (`id_evento`, `fecha`, `tipo`, `realizado`, `notas`, `lista_correos`) VALUES ('','".$_POST['fecha']."', '".$_POST['tipo']."', '".$_POST['realizado']."', '".$_POST['notas']."', '".$_POST['lista_correos']."');";
-
-            $res = mysqli_query($conexion_bd, $sql);
-
-            if($res == 1)
-            {
-                    header('Location: index.php?t=eventos');
-            }else
-            {
-                    echo "Insercion falillda";
-            }
-        }
-
-?>

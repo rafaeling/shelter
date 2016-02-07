@@ -72,7 +72,7 @@
 
 			$row = mysqli_fetch_assoc($res);
                         
-                        echo '<td><h3>'. $row['nombre_animal'].' </h3></td>';
+                        echo '<td><h3>'. $row['id_evento'].' </h3></td>';
 			
                         mysqli_close($conexion_bd);
 					
