@@ -17,11 +17,11 @@
 
 			$res = mysqli_query($conexion_bd, $sql);
                         
-                        $sql = "UPDATE `acogidan` SET contrato='".$_POST['contrato']."' WHERE chip_animal='".$animal."' AND dni_casa_acogida='".$casa_de_acogida."' AND fecha_inicio='".$fecha_inicio."'";
+                        $sql = "UPDATE `acogida` SET contrato='".$_POST['contrato']."' WHERE chip_animal='".$animal."' AND dni_casa_acogida='".$casa_de_acogida."' AND fecha_inicio='".$fecha_inicio."'";
 
 			$res = mysqli_query($conexion_bd, $sql);
                         
-                        $sql = "UPDATE `acogidan` SET notas='".$_POST['notas']."' WHERE chip_animal='".$animal."' AND dni_casa_acogida='".$casa_de_acogida."' AND fecha_inicio='".$fecha_inicio."'";
+                        $sql = "UPDATE `acogida` SET notas='".$_POST['notas']."' WHERE chip_animal='".$animal."' AND dni_casa_acogida='".$casa_de_acogida."' AND fecha_inicio='".$fecha_inicio."'";
 
 			$res = mysqli_query($conexion_bd, $sql);
 
@@ -44,7 +44,7 @@
 
 			include('content/base_datos/conexion_bd.php');
 
-			$sql = "SELECT * FROM acogidan,animal,casa_de_acogida WHERE acogidan.chip_animal='".$animal."' AND acogidan.dni_casa_acogida='".$casa_de_acogida."' AND acogidan.chip_animal=animal.chip_animal AND acogidan.dni_casa_acogida=casa_de_acogida.dni";
+			$sql = "SELECT * FROM acogida,animal,casa_de_acogida WHERE acogida.chip_animal='".$animal."' AND acogida.dni_casa_acogida='".$casa_de_acogida."' AND acogida.chip_animal=animal.chip_animal AND acogida.dni_casa_acogida=casa_de_acogida.dni";
 			
 			$res = mysqli_query($conexion_bd, $sql);
 
