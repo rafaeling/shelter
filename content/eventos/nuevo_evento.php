@@ -44,8 +44,8 @@
                         </tr>
                         
 			<tr>
-                                <td><label for="correos">Correos:</label></td>
-                                <td><input id="correos" name="correos" size="30" maxlength="500" type="text"></td>							
+                                c<td><label for="lista_correos">Lista de Correos:</label></td>
+                                <td><input id="lista_correos" name="lista_correos" size="30" maxlength="500" type="text"></td>							
                         </tr>
                         
                         <tr>
@@ -67,7 +67,7 @@
 			
             include('content/base_datos/conexion_bd.php');
 
-            $sql = "INSERT INTO `shelter`.`evento` (`id_evento`, `fecha`, `tipo`, `realizado`, `notas`, `correos`) VALUES ('', '".$_POST['fecha']."', '".$_POST['tipo']."', '".$_POST['realizado']."', '".$_POST['notas']."', '".$_POST['correos']."');";
+            $sql = "INSERT INTO `shelter`.`evento` (`id_evento`, `fecha`, `tipo`, `realizado`, `notas`, `lista_correos`) VALUES ('', '".$_POST['fecha']."', '".$_POST['tipo']."', '".$_POST['realizado']."', '".$_POST['notas']."', '".$_POST['lista_correos']."');";
 
             $res = mysqli_query($conexion_bd, $sql);
 
