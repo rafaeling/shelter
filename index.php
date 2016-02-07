@@ -43,21 +43,7 @@
 				</ul>
 			</nav><!-- end navigation menu -->
 
-			<div class="footer clearfix">
 
-				<ul class="social clearfix">
-					<li><a href="#" class="fb" data-title="Facebook"></a></li>
-					<li><a href="#" class="google" data-title="Google +"></a></li>
-					<li><a href="#" class="behance" data-title="Behance"></a></li>
-					<!--<li><a href="#" class="twitter" data-title="Twitter"></a></li>
-					<li><a href="#" class="dribble" data-title="Dribble"></a></li>-->
-					<li><a href="#" class="rss" data-title="RSS"></a></li>
-				</ul><!-- end social -->
-
-				<div class="rights">
-					<p>Copyright © 2015 Shelter.</p>
-				</div><!-- end rights -->
-			</div ><!-- end footer -->	
 
 		</div>
 
@@ -308,22 +294,9 @@
 		
 					include 'content/adoptantes/userchange.php';
                                 }
-                                
-                                
-                                
-                                
-                                
-
-
-				
-
-
 
 			?>
 
-
-
-		
 			</div>
 		</div>
 	

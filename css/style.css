@@ -15,8 +15,8 @@ header
 .content
 {
 	position: relative;
-	margin-left: 360px;
-	top: -310px;
+	margin-left: 260px;
+	top: -450px;
 	background-color: #D3D3D3;
 }
 
@@ -27,7 +27,7 @@ header
 
 #menu
 {
-	width: 350px;
+	width: 250px;
 	border: 3px solid #73AD21;
 	background-color: #CF9;
 }
