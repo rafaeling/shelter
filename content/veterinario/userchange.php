@@ -18,7 +18,7 @@
 			$res = mysqli_query($conexion_bd, $sql);
                                           
                         
-                        $sql = "UPDATE `veterinario` SET correo='".$_POST['email_user']."' WHERE nombre='".$_POST['nombre_user']."'";
+                        $sql = "UPDATE `veterinario` SET notas='".$_POST['notas']."' WHERE nombre='".$_POST['nombre_user']."'";
 
                         
 			$res = mysqli_query($conexion_bd, $sql);
@@ -71,11 +71,6 @@ echo '<td><h3>'. $row['nombre'].' </h3></td>';
 
 
 			<tr>
-				<td><label for="email_user">Correo electronico:</label></td>
-				<?php echo '<td><input id="email_user" name="email_user" size="30" maxlength="40" type="email" value="'.$row['correo'].'"></td>'; ?>							
-			</tr>
-			
-			<tr>
 				<td><label for="telefono_user">Teléfono:</label></td>
 				<?php echo '<td><input id="telefono_user" name="telefono_user" size="30" maxlength="40" type="text" value="'.$row['telefono'].'"></td>'; ?>							
 			</tr>
@@ -85,7 +80,11 @@ echo '<td><h3>'. $row['nombre'].' </h3></td>';
 				<?php echo '<td><input id="direccion_user" name="direccion_user" size="30" maxlength="40" type="text" value="'.$row['direccion'].'"></td>'; ?>						
 			</tr>
 		
-
+			<tr>
+				<td><label for="notas">Notas:</label></td>
+				<?php echo '<td><input id="notas" name="notas" size="30" maxlength="500" type="text" value="'.$row['notas'].'"></td>'; ?>							
+			</tr>
+			
                         <tr>
                                 <td align="center" colspan="2">
                                         <input type="submit" id="modificar" name="modificar" value="Modificar"/>
