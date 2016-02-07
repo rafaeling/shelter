@@ -90,8 +90,8 @@ function fSetSelectedDay(myElement){
             
             
             
-            $("#test").html(document.all.calSelectedDate.value + dDate.getMonth() + dDate.getFullYear());
-        }
+               $("#test").html(document.all.calSelectedDate.value + frmCalendarSample.tbSelMonth.value + frmCalendarSample.tbSelYear.value);
+           }
     }
 }
 function fGetDaysInMonth(iMonth, iYear) {
