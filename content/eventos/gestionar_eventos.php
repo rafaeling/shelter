@@ -261,34 +261,34 @@
                     
                 }
                 
-                echo '<tr>
-                    
-                    <tr><label for="idEvento">'.$row["id_evento"].'</label> </tr>
-                    
-                    <div id="evento">
-                        <td>
-                            <label for="tipo">Tipo: </label>
-                            <label id="tipo">'.$row["tipo"].'<br></label>
-                        </td>
-                        
-                        <td>
-                            <label for="realizado">Realizado: </label>
-                            <label id="realizado">'.$realizado.'<br></label>
-                        </td>
+                echo '<div id="evento">
+                    <table>
+                        <tr>
+                            <td>
+                                <label for="tipo">Tipo: </label>
+                                <label id="tipo">'.$row["tipo"].'<br></label>
+                            </td>
 
-                        <td>
-                                <div id="ver">
-                                        <a href="index.php?t=modificar_evento&id_evento='.$row["id_evento"].'"> Ver </a>'.'
-                                </div>
-                        </td>
+                            <td>
+                                <label for="realizado">Realizado: </label>
+                                <label id="realizado">'.$realizado.'<br></label>
+                            </td>
 
-                        <td>
-                                <div id="eliminar">
-                                        <a href="index.php?t=modificar_evento&eliminar=true&id_evento='.$row["id_evento"].'"> Eliminar </a>'.'
-                                </div>
-                        </td>
-                    </div>
-                </tr>';
+                            <td>
+                                    <div id="ver">
+                                            <a href="index.php?t=modificar_evento&id_evento='.$row["id_evento"].'"> Ver </a>'.'
+                                    </div>
+                            </td>
+
+                            <td>
+                                    <div id="eliminar">
+                                            <a href="index.php?t=modificar_evento&eliminar=true&id_evento='.$row["id_evento"].'"> Eliminar </a>'.'
+                                    </div>
+                            </td>
+                    
+                        </tr>
+                    </table>
+                </div>';
             }    
         }
     ?>
