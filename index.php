@@ -67,7 +67,7 @@
 			
 				}else if ($t == "eventos") {
 		
-					include 'content/eventos/gestionar_eventos.php';
+					include 'content/eventos/gestionar_evento.php';
 			
 				}else if ($t == "usuarios") {
 		
