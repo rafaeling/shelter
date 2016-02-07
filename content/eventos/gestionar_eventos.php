@@ -302,10 +302,7 @@ fDrawCal(dCurDate.getFullYear(), dCurDate.getMonth()+1, 30, 30, "12px", "bold", 
 </table>
 </form>
 
-<p><center>
-<font face="arial, helvetica" size="-2">Free JavaScripts provided<br/>
-by <a href="http://javascriptsource.com">The JavaScript Source</a></font>
-</center><p>
+
 
 <!-- Script Size:  7.06 KB -->
 
