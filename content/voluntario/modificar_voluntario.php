@@ -60,7 +60,7 @@
 
 						<td>
 							<div id="animal">
-								<a href="index.php?t=voluntario_change&user='.$row["DNI"].'">Modificar </a>'.'
+								<a href="index.php?t=voluntario_change&user='.$row["DNI"].'">Ver </a>'.'
 							</div>
 						</td>
                                                 

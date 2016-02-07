@@ -113,9 +113,7 @@
 	?>
 
 	<tbody>
-		<tr>
-			<?php echo '<td><h2>Modificando</h2></td>' ?>
-		</tr>
+
 		<tr>
 			<?php echo '<td><h3>'. $animal.' </h3></td>' ?>
 		</tr>
