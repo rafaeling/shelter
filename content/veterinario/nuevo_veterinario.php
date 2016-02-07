@@ -41,20 +41,7 @@
 
 
 	<?php
-	/*
-		include('content/base_datos/conexion_bd.php');
-
-		$sql = "SELECT nombre_animal FROM animal WHERE chip_animal='26820455V'";
-		
-		$res = mysqli_query($conexion_bd, $sql);
-
-		$row = mysqli_fetch_assoc($res);
-
-		mysqli_close($conexion_bd);
-				
-		echo '<div> <h1>Bienvenido, '.$row['nombre_animal'].'</h1></div>';
-	*/
-
+        
 		if (isset($_POST['insertar']))
 		{
 			
@@ -78,36 +65,3 @@
 		}
 
 	?>
-
-
-
-<script>
-$(document).ready(function(){
-	$(".pass").hide();
-	$(".pass_c").hide();
-});
-</script>
-
-<script>
-
-
-$(document).ready(function(){
-
-	$("#tipo_user").change(function(){
-    	if ($("#tipo_user").val() === "voluntario")
-	    {
-	    	$(".pass").show();
-			$(".pass_c").show();
-
-	    }else
-	    {
-	    	$(".pass").hide();
-			$(".pass_c").hide();
-	    }
-	});
-  
-});
-
-
-</script>
-
