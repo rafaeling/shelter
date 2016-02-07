@@ -61,7 +61,7 @@
 			include('content/base_datos/conexion_bd.php');
 
 			//$sql = "INSERT INTO `usuario` (`chip_animal`, `nombre_animal`, `foto_animal`, `especie_animal`, `raza_animal`, `sexo_animal`, `fecha_nacimiento_animal`, `color_animal`, `peso_animal`, `tamanio_animal`, `salud_animal`, `estado_animal`, `reservado_animal`, `medicamentos_animal`, `notas_animal`, `fecha_llegada_animal`, `direccion_animal`, `multimedia_animal`) VALUES ('".$_POST['num_chip_animal']."','".$_POST['name_animal']."','".$target_file."','".$_POST['especie_animal']."','".$_POST['raza_animal']."','".$_POST['sexo_animal']."','".$_POST['edad_animal']."','".$_POST['color_animal']."', ".$_POST['peso_animal'].", '".$_POST['tamanio_animal']."', '".$_POST['salud_animal']."', '".$_POST['estado_animal']."', ".$_POST['reservado_animal'].", '".$_POST['medicamentos_animal']."', '".$_POST['notas_animal']."', '".$_POST['fecha_llegada_animal']."', '".$_POST['direccion_animal']."', '".$_POST['multimedia_animal']."');";
-                        $sql = "INSERT INTO `shelter`.`veterinario` (`nombre`, `correo`, `direccion`, `notas`) VALUES ('".$_POST['nombre_user']."', '".$_POST['email_user']."', '".$_POST['direccion_user']."', '".$_POST['notas']."');";
+                        $sql = "INSERT INTO `shelter`.`veterinario` (`nombre`, `telefono`, `direccion`, `notas`) VALUES ('".$_POST['nombre_user']."', '".$_POST['telefono']."', '".$_POST['direccion_user']."', '".$_POST['notas']."');";
 
 			$res = mysqli_query($conexion_bd, $sql);
 
