@@ -36,7 +36,7 @@
                         echo '<tr>
                             <td>
 							<div id="animal">
-								<br><a href="index.php?t=nueva_adopcion"> Nueva adopcion </a></br>
+								<a href="index.php?t=nueva_adopcion"> Nueva adopcion </a>
 							</div>
 						</td>
 			</tr>
@@ -56,10 +56,8 @@
 						<td>
 							<div id="animal">
 
-								<label for="name_animal">Nombre: </label>
 								<label id="nombre_animal">'.$row["nombre_animal"].'<br></label>
-								<label for="chip_animal">Chip Animal: </label>
-								<label id="chip_animal">'.$row["chip_animal"].'<br></label>
+
 							</div>
 						</td>
                                                 
@@ -68,8 +66,8 @@
 
 								<label for="name_usuario">Nombre: </label>
 								<label id="nombre_usuario">'.$row["nombre"].'<br></label>
-								<label for="dni_usuario">DNI: </label>
-								<label id="dni_user">'.$row["DNI"].'<br></label>
+								<label for="telefono">Tel: </label>
+								<label id="telefono">'.$row["telefono"].'<br></label>
                                                                 <label for="direccion">Dirección: </label>
 								<label id="direccion">'.$row["direccion"].'<br></label>
 							</div>
@@ -77,7 +75,7 @@
 
 						<td>
 							<div id="animal">
-								<a href="index.php?t=adopcion_change&animal='.$row["chip_animal"].'">Modificar </a>'.'
+								<a href="index.php?t=adopcion_change&animal='.$row["chip_animal"].'">Ver </a>'.'
 							</div>
 						</td>
                                                 
