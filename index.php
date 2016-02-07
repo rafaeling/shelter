@@ -38,7 +38,6 @@
 					<li id="menu_bottom"><a href="index.php?t=adopciones">Adopciones</a></li>
 					<li id="menu_bottom"><a href="index.php?t=acogidas">Acogidas</a></li>
 					<li id="menu_bottom"><a href="index.php?t=eventos">Eventos</a></li>
-					<li id="menu_bottom"><a href="index.php?t=recursos">Recursos</a></li>
 				</ul>
 			</nav><!-- end navigation menu -->
 
@@ -69,10 +68,6 @@
 				}else if ($t == "eventos") {
 		
 					include 'content/gestionar_eventos.php';
-			
-				}else if ($t == "recursos") {
-		
-					include 'content/gestionar_recursos.php';
 			
 				}else if ($t == "usuarios") {
 		
@@ -125,26 +120,6 @@
 				}else if ($t == "nuevo_evento") {
 		
 					include 'content/eventos/nuevo_evento.php';
-			
-				}else if ($t == "nueva_donacion") {
-		
-					include 'content/recursos/nueva_donacion.php';
-			
-				}else if ($t == "asignar_recursos") {
-		
-					include 'content/recursos/asignar_recursos.php';
-			
-				}else if ($t == "recursos_eventos") {
-		
-					include 'content/recursos/recursos_eventos.php';
-			
-				}else if ($t == "ingresar_usuario") {
-		
-					include 'content/recursos/ingresar_usuario.php';
-			
-				}else if ($t == "realizar_pago") {
-		
-					include 'content/recursos/realizar_pago.php';
 			
 				}else if ($t == "dar_baja_animal") {
 		
