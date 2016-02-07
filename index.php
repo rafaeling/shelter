@@ -56,7 +56,7 @@
 		
 				if ($t == "acogidas") {
 		
-					include 'content/acogidas/modificar_acogidas.php';
+					include 'content/acogidas/modificar_acogida.php';
 			
 				}else if ($t == "adopciones") {
 		
