@@ -56,7 +56,7 @@
 		
 				if ($t == "acogidas") {
 		
-					include 'content/gestionar_acogidas.php';
+					include 'content/acogidas/modificar_acogidas.php';
 			
 				}else if ($t == "adopciones") {
 		
@@ -105,6 +105,10 @@
 				}else if ($t == "nueva_acogida") {
 		
 					include 'content/acogidas/nueva_acogida.php';
+                                                
+				}else if ($t == "crear_acogida") {
+		
+					include 'content/acogidas/crear_acogida.php';
 			
 				}else if ($t == "modificar_evento") {
 		
