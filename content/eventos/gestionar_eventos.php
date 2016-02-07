@@ -11,7 +11,7 @@
 
         if($fecha != '')
         {
-            include('conexion_bd.php');
+            include('content/base_datos/conexion_bd.php');
 
             $sql = "SELECT * FROM evento WHERE fecha='".$fecha."'";
 

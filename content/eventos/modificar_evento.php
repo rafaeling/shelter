@@ -6,53 +6,58 @@
 	$evento = isset($_GET["id_evento"]) ? $_GET["id_evento"] : '';
         $eliminar = isset($_GET["eliminar"]) ? $_GET["eliminar"] : '';
 
-                        if($eliminar == 'true')
-                        {
-                            $id_evento = isset($_GET["id_evento"]) ? $_GET["id_evento"] : '';
-                            
-                            $sql = "DELETE FROM evento WHERE id_evento='".$id_evento."'";
-                            
-                            $res = mysqli_query($conexion_bd, $sql);
-                        }
-		if (isset($_POST['modificar']))
-		{
-			
-			include('content/base_datos/conexion_bd.php');
+            if($eliminar == 'true')
+            {
+                include('content/base_datos/conexion_bd.php');
+                
+                $id_evento = isset($_GET["id_evento"]) ? $_GET["id_evento"] : '';
 
-			$sql = "UPDATE `evento` SET id_evento='".$_POST['id_evento']."' WHERE id_evento='".$evento."'";
+                $sql = "DELETE FROM evento WHERE id_evento='".$id_evento."'";
 
-			$res = mysqli_query($conexion_bd, $sql);
-                        
-                        $sql = "UPDATE `evento` SET fecha='".$_POST['fecha']."' WHERE id_evento='".$evento."'";
+                $res = mysqli_query($conexion_bd, $sql);
+                
+                header('Location: index.php?t=eventos');
+            }
+            
+            else if (isset($_POST['modificar']))
+            {
 
-			$res = mysqli_query($conexion_bd, $sql);
-                        
-                        $sql = "UPDATE `evento` SET tipo='".$_POST['tipo']."' WHERE id_evento='".$evento."'";
+                    include('content/base_datos/conexion_bd.php');
 
-			$res = mysqli_query($conexion_bd, $sql);
-                        
-                        $sql = "UPDATE `evento` SET realizado='".$_POST['realizado']."' WHERE id_evento='".$evento."'";
+                    $sql = "UPDATE `evento` SET id_evento='".$_POST['id_evento']."' WHERE id_evento='".$evento."'";
 
-			$res = mysqli_query($conexion_bd, $sql);
-                        
-                        $sql = "UPDATE `evento` SET notas='".$_POST['notas']."' WHERE id_evento='".$evento."'";
+                    $res = mysqli_query($conexion_bd, $sql);
 
-			$res = mysqli_query($conexion_bd, $sql);
-                        
-                        $sql = "UPDATE `evento` SET lista_correos='".$_POST['lista_correos']."' WHERE id_evento='".$evento."'";
+                    $sql = "UPDATE `evento` SET fecha='".$_POST['fecha']."' WHERE id_evento='".$evento."'";
 
-			$res = mysqli_query($conexion_bd, $sql);
+                    $res = mysqli_query($conexion_bd, $sql);
 
-			if($res == 1)
-			{
-				echo "Modificación Correcta";
-			}else
-			{
-				echo "Modificación falillda";
-			}
+                    $sql = "UPDATE `evento` SET tipo='".$_POST['tipo']."' WHERE id_evento='".$evento."'";
 
-		
-		}
+                    $res = mysqli_query($conexion_bd, $sql);
+
+                    $sql = "UPDATE `evento` SET realizado='".$_POST['realizado']."' WHERE id_evento='".$evento."'";
+
+                    $res = mysqli_query($conexion_bd, $sql);
+
+                    $sql = "UPDATE `evento` SET notas='".$_POST['notas']."' WHERE id_evento='".$evento."'";
+
+                    $res = mysqli_query($conexion_bd, $sql);
+
+                    $sql = "UPDATE `evento` SET lista_correos='".$_POST['lista_correos']."' WHERE id_evento='".$evento."'";
+
+                    $res = mysqli_query($conexion_bd, $sql);
+
+                    if($res == 1)
+                    {
+                            echo "Modificación Correcta";
+                    }else
+                    {
+                            echo "Modificación falillda";
+                    }
+
+
+            }
 
 	?>
 
@@ -66,8 +71,10 @@
 			$res = mysqli_query($conexion_bd, $sql);
 
 			$row = mysqli_fetch_assoc($res);
-echo '<td><h3>'. $row['nombre_animal'].' </h3></td>';
-			mysqli_close($conexion_bd);
+                        
+                        echo '<td><h3>'. $row['nombre_animal'].' </h3></td>';
+			
+                        mysqli_close($conexion_bd);
 					
 	
 		?>
@@ -104,15 +111,15 @@ echo '<td><h3>'. $row['nombre_animal'].' </h3></td>';
 			<tr>
 				<?php 
 
-					if($row['reservado_animal']==1)
+					if($row['realizado']==1)
 					{
-						$reservado ="Si";
+						$realizado ="Si";
 					}else
 					{
-						$reservado="No";
+						$realizado="No";
 					}
 
-				echo  '<td><label for="realizado">Realizado: '.$Reservado.'</label></td>'	?>	
+				echo  '<td><label for="realizado">Realizado: '.$realizado.'</label></td>'	?>	
 				<td><select id="realizado" name="realizado">
 						<option value="vacio">Seleccionar</option>
 						<option value="1">Sí</option>
@@ -123,12 +130,12 @@ echo '<td><h3>'. $row['nombre_animal'].' </h3></td>';
 
 			<tr>
 				<td><label for="notas">Notas:</label></td>
-				<?php echo  '<td><input id="notas" name="notas" size="30" maxlength="40" type="text" value="'.$row['medicamentos_animal'].'"></td>'	?>								
+				<?php echo  '<td><input id="notas" name="notas" size="30" maxlength="40" type="text" value="'.$row['notas'].'"></td>'	?>								
 			</tr>
 
 			<tr>
 				<td><label for="lista_correos">Lista de correos:</label></td>
-				<?php echo  '<td><input id="lista_correos" name="lista_correos" size="30" maxlength="40" type="text" value="'.$row['notas_animal'].'"></td>'	?>								
+				<?php echo  '<td><input id="lista_correos" name="lista_correos" size="30" maxlength="40" type="text" value="'.$row['lista_correos'].'"></td>'	?>								
 			</tr>
 
                         <tr>
