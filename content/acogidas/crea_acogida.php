@@ -19,8 +19,8 @@
                                     <label id="nombre_animal">'.$animal.'<br></label>
                                 </td>
                                 <td>
-                                    <label for="name_animal">DNI Casa_De_acogida: </label>
-                                    <label id="nombre_animal">'.$casa_de_acogida.'<br></label>
+                                    <label for="DNI">DNI Casa De acogida: </label>
+                                    <label id="DNI">'.$casa_de_acogida.'<br></label>
                                 </td>
                         </tr>';
                         
@@ -38,12 +38,12 @@
                 
                 <tr>
 			<td><label for="contrato">Contrato:</label></td>
-			<td><input id="contrato" name="contrato" size="30" maxlength="40" type="text"></td>							
+			<td><input id="contrato" name="contrato" size="30" maxlength="5000" type="text"></td>							
 		</tr>
                 
                 <tr>
 			<td><label for="notas">Notas:</label></td>
-			<td><input id="notas" name="notas" size="30" maxlength="40" type="text"></td>							
+			<td><input id="notas" name="notas" size="30" maxlength="500" type="text"></td>							
 		</tr>
                 
                 <tr>
@@ -66,7 +66,7 @@
 			
             include('content/base_datos/conexion_bd.php');
 
-            $sql = "INSERT INTO `shelter`.`acogida` (`DNI`, `chip_animal`, `fecha_inicio`, `fecha_fin`, `contrato`, `notas`) VALUES ('".$casa_de_acogida."', '".$animal."', '".$_POST['fecha_inicio']."', '".$_POST['fecha_fin']."', '".$_POST['contrato']."', '".$_POST['notas']."');";
+            $sql = "INSERT INTO `shelter`.`acogida` (`dni_casa_acogida`, `chip_animal`, `fecha_inicio`, `fecha_fin`, `contrato`, `notas`) VALUES ('".$casa_de_acogida."', '".$animal."', '".$_POST['fecha_inicio']."', '".$_POST['fecha_fin']."', '".$_POST['contrato']."', '".$_POST['notas']."');";
 
             $res = mysqli_query($conexion_bd, $sql);
 

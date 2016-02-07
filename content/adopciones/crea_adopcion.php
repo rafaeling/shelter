@@ -19,8 +19,8 @@
                                     <label id="nombre_animal">'.$animal.'<br></label>
                                 </td>
                                 <td>
-                                    <label for="name_animal">DNI Adoptante: </label>
-                                    <label id="nombre_animal">'.$adoptante.'<br></label>
+                                    <label for="DNI">DNI Adoptante: </label>
+                                    <label id="DNI">'.$adoptante.'<br></label>
                                 </td>
                         </tr>';
                         
