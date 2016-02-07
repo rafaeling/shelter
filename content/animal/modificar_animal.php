@@ -35,7 +35,7 @@
                         echo '<tr>
                             <td>
 							<div id="animal">
-								<br><a href="index.php?t=nuevo_animal"> Nuevo animal </a></br>
+								<a href="index.php?t=nuevo_animal"> Nuevo animal </a>
 							</div>
 						</td>
 			</tr>
@@ -64,13 +64,13 @@
 
 						<td>
 							<div id="animal">
-								<br><a href="index.php?t=modificando&animal='.$row["chip_animal"].'">Modificar </a>'.$row["nombre_animal"].'</br>
+								<a href="index.php?t=modificando&animal='.$row["chip_animal"].'">Ver </a>'.'
 							</div>
 						</td>
                                                 
 <td>
 							<div id="animal">
-								<br><a href="index.php?t=modificar_animal&eliminar=true&user='.$row["chip_animal"].'"> Eliminar </a>'.$row["chip_animal"].'</br>
+								<a href="index.php?t=modificar_animal&eliminar=true&user='.$row["chip_animal"].'"> Eliminar </a>'.'
 							</div>
 						</td>
 					</tr>';
