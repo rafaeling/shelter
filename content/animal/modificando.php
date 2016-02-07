@@ -144,7 +144,7 @@ echo '<td><h3>'. $row['nombre_animal'].' </h3></td>';
 
 			<tr>
 				<td><label for="num_chip_animal">Número Chip:</label></td>
-				<?php echo  '<td><input id="num_chip_animal" name="num_chip_animal" size="30" maxlength="40" type="text" value="'.$row['chip_animal'].'"></td>'	?>						
+				<?php echo  '<td><input id="num_chip_animal" name="num_chip_animal" size="30" maxlength="40" type="text" value="'.$row['chip_animal'].'"readonly></td>'	?>						
 			</tr>
 
 			<tr>
