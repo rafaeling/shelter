@@ -37,18 +37,23 @@
 		</tr>
                 
                 <tr>
-			<td><label for="tasa_abonada">Tasa Abonada:</label></td>
-			<td><input id="tasa_abonada" name="tasa_abonada" size="30" maxlength="40" type="text"></td>							
-		</tr>
+                        <td><label for="tasa_abonada">Tasa Abonada:</label></td>
+                        <td><select id="tasa_abonada" name="tasa_abonada">
+                                        <option value="vacio">Seleccionar</option>
+                                        <option value="1">Si</option>
+                                        <option value="0">No</option>
+                            </select>
+                        </td>							
+                </tr>
                 
                 <tr>
 			<td><label for="contrato">Contrato:</label></td>
-			<td><input id="contrato" name="contrato" size="30" maxlength="40" type="text"></td>							
+			<td><input id="contrato" name="contrato" size="30" maxlength="5000" type="text"></td>							
 		</tr>
                 
                 <tr>
 			<td><label for="notas">Notas:</label></td>
-			<td><input id="notas" name="notas" size="30" maxlength="40" type="text"></td>							
+			<td><input id="notas" name="notas" size="30" maxlength="500" type="text"></td>							
 		</tr>
                 
                 <tr>
