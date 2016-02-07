@@ -15,7 +15,7 @@
 
 
 
-<div id="test">hola </div>
+<div id="test"></div>
 <!-- TWO STEPS TO INSTALL DYNAMIC CALENDAR:
 
   1.  Copy the coding into the HEAD of your HTML document
@@ -90,7 +90,7 @@ function fSetSelectedDay(myElement){
             
             
             
-            alert(document.all.calSelectedDate.value + dDate.getMonth() + dDate.getFullYear());
+            $("#test").html(document.all.calSelectedDate.value + dDate.getMonth() + dDate.getFullYear());
         }
     }
 }
@@ -262,7 +262,3 @@ by <a href="http://javascriptsource.com">The JavaScript Source</a></font>
 
 <!-- Script Size:  7.06 KB -->
 
-<script>
-    
-    showHint();
-</script>
