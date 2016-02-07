@@ -46,20 +46,6 @@
 
 
 	<?php
-	/*
-		include('content/base_datos/conexion_bd.php');
-
-		$sql = "SELECT nombre_animal FROM animal WHERE chip_animal='26820455V'";
-		
-		$res = mysqli_query($conexion_bd, $sql);
-
-		$row = mysqli_fetch_assoc($res);
-
-		mysqli_close($conexion_bd);
-				
-		echo '<div> <h1>Bienvenido, '.$row['nombre_animal'].'</h1></div>';
-	*/
-
 		if (isset($_POST['insertar']))
 		{
 			
@@ -77,42 +63,7 @@
 			{
 				echo "Insercion falillda";
 			}
-
-			//echo 'CHIP: '.$_POST['num_chip_animal'].' NOMBRE ANIMAL: '.$_POST['name_animal'].' FOTO ANIMAL: '.$_POST['foto_animal'].' ESPECIE ANIMAL: '.$_POST['especie_animal'].' RAZA ANIMAL: '.$_POST['raza_animal'].' SEXO ANIMAL: '.$_POST['sexo_animal'].' FECHA NACIMIENTO: '.$_POST['edad_animal'].' COLOR ANIMAL: '.$_POST['color_animal'].' PESO ANIMAL: '.$_POST['peso_animal'].' TAMAÑO ANIMAL: '.$_POST['tamaño_animal'].' SALUD ANIMAL: '.$_POST['salud_animal'].' ESTADO ANIMAL: '.$_POST['estado_animal'].' RESERVADO ANIMAL: '.$_POST['reservado_animal'].' MEDICAMENTOS ANIMAL: '.$_POST['medicamentos_animal'].' NOTAS ANIMAL: '.$_POST['notas_animal'].' FECHA LLEGADA ANIMAL: '.$_POST['fecha_llegada_animal'].' DIRECCION ANIMAL: '.$_POST['direccion_animal'].' MULTIMEDIA ANIMAL: '.$_POST['multimedia_animal'].' ';
 		
 		}
 
 	?>
-
-
-
-<script>
-$(document).ready(function(){
-	$(".pass").hide();
-	$(".pass_c").hide();
-});
-</script>
-
-<script>
-
-
-$(document).ready(function(){
-
-	$("#tipo_user").change(function(){
-    	if ($("#tipo_user").val() === "voluntario")
-	    {
-	    	$(".pass").show();
-			$(".pass_c").show();
-
-	    }else
-	    {
-	    	$(".pass").hide();
-			$(".pass_c").hide();
-	    }
-	});
-  
-});
-
-
-</script>
-
