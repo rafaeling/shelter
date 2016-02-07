@@ -24,11 +24,12 @@
 
 <script>
     var fecha;
+    var result;
 </script>
 
 
 <script>
-function showHint() {
+function aletoma(date) {
     /*
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function() {
@@ -41,14 +42,20 @@ function showHint() {
     
     */
    var parametros;
-   
    $.ajax({
                 data:  parametros,
-                url:   'http://localhost/shelter/content/eventos/listar_eventos.php?fecha='+fecha,
+                url:   'http://localhost/shelter/content/eventos/listar_eventos.php?fecha='+date,
                 type:  'post',
                 success: function(output) {
                       $("#test").html(output)
-                }
+                      result = output;
+                      
+                      
+                      
+                },
+                
+                async: false
+                
         });
     
 }
@@ -95,7 +102,7 @@ function fSetSelectedDay(myElement){
             
             fecha = frmCalendarSample.tbSelYear.value + "-" + frmCalendarSample.tbSelMonth.value + "-" + document.all.calSelectedDate.value;
             
-            showHint();
+            aletoma(fecha);
             
            }
     }
@@ -257,12 +264,37 @@ frmCalendarSample.tbSelYear.options[i].selected = true;
 </tr>
 <tr>
 <td>
+    
+<script>
+    function actulizar() {
+        
+        for(var i = 1; i<=2 ; i++)
+        {
+            fecha = document.getElementById("tbSelYear").value  + "-" + document.getElementById("tbSelMonth").value + "-" + i;
+           aletoma(fecha);
+            
+            
+            if(result.length != 1)
+            {
+                
+            }
+            
+        }
+    
+        
+    
+    }
+
+</script>
+    
 <script language="JavaScript">
 var dCurDate = new Date();
 fDrawCal(dCurDate.getFullYear(), dCurDate.getMonth()+1, 30, 30, "12px", "bold", 1);
     document.getElementById("tbSelYear").value = dDate.getFullYear();
     
     document.getElementById("tbSelMonth").value = dDate.getMonth()+1;
+    
+    actulizar();
     
 </script>
 </td>
