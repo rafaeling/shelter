@@ -35,7 +35,7 @@
                         echo '<tr>
                             <td>
 							<div id="animal">
-								<br><a href="index.php?t=nuevo_padrino"> Nuevo padrino </a></br>
+								<a href="index.php?t=nuevo_padrino"> Nuevo padrino </a>
 							</div>
 						</td>
 			</tr>
@@ -53,22 +53,20 @@
 
 								<label for="name_usuario">Nombre: </label>
 								<label id="nombre_usuario">'.$row["nombre"].'<br></label>
-								<label for="dni_usuario">DNI: </label>
-								<label id="dni_user">'.$row["DNI"].'<br></label>
-                                                                <label for="direccion">Dirección: </label>
-								<label id="direccion">'.$row["direccion"].'<br></label>
+                                                                <label for="correo">Correo: </label>
+								<label id="correo">'.$row["correo"].'<br></label>
 							</div>
 						</td>
 
 						<td>
 							<div id="animal">
-								<br><a href="index.php?t=padrino_change&user='.$row["DNI"].'">Modificar </a>'.$row["nombre"].'</br>
+								<a href="index.php?t=padrino_change&user='.$row["DNI"].'">Ver </a>'.'
 							</div>
 						</td>
                                                 
 <td>
 							<div id="animal">
-								<br><a href="index.php?t=modificar_padrino&eliminar=true&user='.$row["DNI"].'"> Eliminar </a>'.$row["nombre"].'</br>
+								<a href="index.php?t=modificar_padrino&eliminar=true&user='.$row["DNI"].'"> Eliminar </a>'.'
 							</div>
 						</td>
 					</tr>';

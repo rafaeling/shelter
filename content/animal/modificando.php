@@ -113,12 +113,6 @@
 	?>
 
 	<tbody>
-		<tr>
-			<?php echo '<td><h2>Modificando</h2></td>' ?>
-		</tr>
-		<tr>
-			<?php echo '<td><h3>'. $animal.' </h3></td>' ?>
-		</tr>
 
 		
 		<?php
@@ -130,7 +124,7 @@
 			$res = mysqli_query($conexion_bd, $sql);
 
 			$row = mysqli_fetch_assoc($res);
-
+echo '<td><h3>'. $row['nombre_animal'].' </h3></td>';
 			mysqli_close($conexion_bd);
 					
 	

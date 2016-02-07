@@ -57,8 +57,8 @@
 
 								<label for="name_animal">Nombre: </label>
 								<label id="nombre_animal">'.$row["nombre_animal"].'<br></label>
-								<label for="chip_animal">Chip Animal: </label>
-								<label id="chip_animal">'.$row["chip_animal"].'<br></label>
+								<label for="estado_animal">Estado: </label>
+								<label id="estado_animal">'.$row["estado_animal"].'<br></label>
 							</div>
 						</td>
 
