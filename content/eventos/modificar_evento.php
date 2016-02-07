@@ -1,104 +1,133 @@
+<form action="<?php  $_SERVER['PHP_SELF']; ?>" method="post" enctype="multipart/form-data">
 <table>
+
+	<?php
 						
+	$evento = isset($_GET["id_evento"]) ? $_GET["id_evento"] : '';
+
+
+		if (isset($_POST['modificar']))
+		{
+			
+			include('content/base_datos/conexion_bd.php');
+
+			$sql = "UPDATE `evento` SET id_evento='".$_POST['id_evento']."' WHERE id_evento='".$evento."'";
+
+			$res = mysqli_query($conexion_bd, $sql);
+                        
+                        $sql = "UPDATE `evento` SET fecha='".$_POST['fecha']."' WHERE id_evento='".$evento."'";
+
+			$res = mysqli_query($conexion_bd, $sql);
+                        
+                        $sql = "UPDATE `evento` SET tipo='".$_POST['tipo']."' WHERE id_evento='".$evento."'";
+
+			$res = mysqli_query($conexion_bd, $sql);
+                        
+                        $sql = "UPDATE `evento` SET realizado='".$_POST['realizado']."' WHERE id_evento='".$evento."'";
+
+			$res = mysqli_query($conexion_bd, $sql);
+                        
+                        $sql = "UPDATE `evento` SET notas='".$_POST['notas']."' WHERE id_evento='".$evento."'";
+
+			$res = mysqli_query($conexion_bd, $sql);
+                        
+                        $sql = "UPDATE `evento` SET lista_correos='".$_POST['lista_correos']."' WHERE id_evento='".$evento."'";
+
+			$res = mysqli_query($conexion_bd, $sql);
+
+			if($res == 1)
+			{
+				echo "Modificación Correcta";
+			}else
+			{
+				echo "Modificación falillda";
+			}
+
+		
+		}
+
+	?>
+
 	<tbody>
-		<tr>
-			<td><h2>Modificar Evento</h2></td>
-		</tr>
-			<tr>
-				<td><label for="name_animal">Nombre:</label></td>
-				<td><input id="name_animal" name="name_animal" size="30" maxlength="40" type="text"></td>							
-			</tr>
+		<?php
 
-			<tr>
-				<td><label for="num_chip_animal">Número Chip:</label></td>
-				<td><input id="num_chip_animal" name="num_chip_animal" size="30" maxlength="40" type="text"></td>							
-			</tr>
+			include('content/base_datos/conexion_bd.php');
 
-			<tr>
-				<td><label for="foto_animal">Foto:</label></td>
-				<td><input id="foto_animal" name="foto_animal" size="30" maxlength="40" type="text"></td>							
-			</tr>
+			$sql = "SELECT * FROM evento WHERE id_evento='".$evento."'";
 			
-			<tr>
-				<td><label for="especie_animal">Especie:</label></td>
-				<td><input id="especie_animal" name="especie_animal" size="30" maxlength="40" type="text"></td>							
-			</tr>
+			$res = mysqli_query($conexion_bd, $sql);
 
-			<tr>
-				<td><label for="raza_animal">Raza:</label></td>
-				<td><input id="raza_animal" name="raza_animal" size="30" maxlength="40" type="text"></td>							
-			</tr>
-
-			<tr>
-				<td><label for="sexo_animal">Sexo:</label></td>
-				<td><input id="sexo_animal" name="sexo_animal" size="30" maxlength="40" type="text"></td>							
-			</tr>
-
-			<tr>
-				<td><label for="edad_animal">Edad:</label></td>
-				<td><input id="edad_animal" name="edad_animal" size="30" maxlength="40" type="text"></td>							
-			</tr>
-
-			<tr>
-				<td><label for="color_animal">Color:</label></td>
-				<td><input id="color_animal" name="color_animal" size="30" maxlength="40" type="text"></td>							
-			</tr>
-			
-			<tr>
-				<td><label for="peso_animal">Peso:</label></td>
-				<td><input id="peso_animal" name="peso_animal" size="30" maxlength="40" type="text"></td>							
-			</tr>
-
-			<tr>
-				<td><label for="salud_animal">Salud:</label></td>
-				<td><input id="salud_animal" name="salud_animal" size="30" maxlength="40" type="text"></td>							
-			</tr>
-
-			<tr>
-				<td><label for="estado_animal">Estado:</label></td>
-				<td><input id="estado_animal" name="estado_animal" size="30" maxlength="40" type="text"></td>							
-			</tr>
-
-
-			<tr>
-				<td><label for="reservado_animal">Reservado:</label></td>
-				<td><input id="reservado_animal" name="reservado_animal" size="30" maxlength="40" type="text"></td>							
-			</tr>
-
-			<tr>
-				<td><label for="medicamentos_animal">Medicamentos:</label></td>
-				<td><input id="medicamentos_animal" name="medicamentos_animal" size="30" maxlength="40" type="text"></td>							
-			</tr>
-
-			<tr>
-				<td><label for="notas_animal">Notas:</label></td>
-				<td><input id="notas_animal" name="notas_animal" size="30" maxlength="40" type="text"></td>							
-			</tr>
-
-
-			<tr>
-				<td><label for="fecha_llegada_animal">Fecha llegada:</label></td>
-				<td><input id="fecha_llegada_animal" name="fecha_llegada_animal" size="30" maxlength="40" type="text"></td>							
-			</tr>
-
-			<tr>
-				<td><label for="ususario_registro_animal">Usuario Registros:</label></td>
-				<td><input id="usuario_registro_animal" name="usuario_registro_animal" size="30" maxlength="40" type="text"></td>							
-			</tr>
+			$row = mysqli_fetch_assoc($res);
+echo '<td><h3>'. $row['nombre_animal'].' </h3></td>';
+			mysqli_close($conexion_bd);
 					
+	
+		?>
+
+
 			<tr>
-				<td><label for="direccion_encontrado_animal">Dirección Encontrado:</label></td>
-				<td><input id="direccion_encontrado_animal" name="direccion_encontrado_animal" size="30" maxlength="40" type="text"></td>							
+				<td><label for="id_evento">ID_evento: </label></td>
+				<?php echo '<td><input id="id_evento" name="id_evento" size="30" maxlength="40" type="text" value="'.$row['id_evento'].'"readonly></td>'	?>						
 			</tr>
-			
+
 			<tr>
-				<td><label for="multimedia_animal">Multimedia:</label></td>
-				<td><input id="multimedia_animal" name="multimedia_animal" size="30" maxlength="40" type="text"></td>							
+				<td><label for="fecha">Fecha:</label></td>
+				<?php echo  '<td><input type="date" id="fecha" name="fecha" value="'.$row['fecha'].'"></td>'	?>								
 			</tr>
-					
-					
-	</tbody>
+
+
+			<tr>
+				<?php echo  '<td><label for="tipo">Tipo: '.$row['tipo'].'</label></td>'	?>	
+				<td><select id="tipo" name="tipo">
+						<option value="vacio">Seleccionar</option>
+						<option value="vacuna">Vacuna</option>
+						<option value="caduca">Caduca collar</option>
+						<option value="reunion">Reunión</option>
+						<option value="esteril">Esterilización</option>
+						<option value="chip">Chip</option>
+						<option value="prueba">Prueba</option>
+						<option value="otros">Otros</option>
+					</select>
+
+				</td>							
+			</tr>
+
+
+			<tr>
+				<?php 
+
+					if($row['reservado_animal']==1)
+					{
+						$reservado ="Si";
+					}else
+					{
+						$reservado="No";
+					}
+
+				echo  '<td><label for="realizado">Realizado: '.$Reservado.'</label></td>'	?>	
+				<td><select id="realizado" name="realizado">
+						<option value="vacio">Seleccionar</option>
+						<option value="1">Sí</option>
+						<option value="0">No</option>
+					</select>
+				</td>							
+			</tr>
+
+			<tr>
+				<td><label for="notas">Notas:</label></td>
+				<?php echo  '<td><input id="notas" name="notas" size="30" maxlength="40" type="text" value="'.$row['medicamentos_animal'].'"></td>'	?>								
+			</tr>
+
+			<tr>
+				<td><label for="lista_correos">Lista de correos:</label></td>
+				<?php echo  '<td><input id="lista_correos" name="lista_correos" size="30" maxlength="40" type="text" value="'.$row['notas_animal'].'"></td>'	?>								
+			</tr>
 
 	
+					
+	</tbody>
+	</table>
 
-</table>
+</formm>
+
+
